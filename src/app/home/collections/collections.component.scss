@@ -1,0 +1,26 @@
+
+button{
+   
+    background-color: #50e3c2;
+}
+#search-bar{
+
+        background-color: #393b3f;
+    
+}
+form{
+    display: flex;
+    
+    input{
+        flex: 1;
+        border: none;
+        outline: none;
+
+    }
+    button{
+        border: none;
+        outline: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+}
