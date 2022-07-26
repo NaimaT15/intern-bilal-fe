@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { HeaderComponent } from './header/header.component';
+import { LatestComponent } from './latest/latest.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     CollectionsComponent,
     VirtualTourComponent,
-    HeaderComponent
+    HeaderComponent,
+    LatestComponent
   ],
   imports: [
     CommonModule,
