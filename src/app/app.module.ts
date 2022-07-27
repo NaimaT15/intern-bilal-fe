@@ -8,9 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, NotFoundComponent],
   imports: [BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,  NgbModule],
   providers: [],
   bootstrap: [AppComponent],
