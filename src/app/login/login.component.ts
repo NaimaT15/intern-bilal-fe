@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     
     if (res.statusCode == 200) {
       //successfull login
-      this.router.navigate(['dashboard'])
+      this.router.navigate(['admin/dashboard'])
     } else {
       //error
     }
