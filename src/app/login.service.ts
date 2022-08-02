@@ -4,22 +4,18 @@ import { Observable } from 'rxjs';
 import { ApiUrl } from './app.variable';
 import { HttpHeaders } from '@angular/common/http';
 
-
-
-const httpOptions={
-  headers : new HttpHeaders({
-    'Content-Type':'application/json'
-  })
-}
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-
-  login(username:string, password:string):Observable<any>{
-    return this.http.post(ApiUrl.login, httpOptions)
+  login(loginData: any): Observable<any> {
+    return this.http.post<any>(ApiUrl.login, loginData);
   }
 }

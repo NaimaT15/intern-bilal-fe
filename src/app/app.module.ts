@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private loginService: LoginService, private router: Router ) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   onChange(data: string, name: string) {
     if (name == 'name') {
@@ -25,13 +25,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    var res = await this.loginService
-    .login(this.login.username, this.login.password)
-    .toPromise();
-    
+    this.router.navigate(['admin/dashboard']);
+    var res = await this.loginService.login(this.login).toPromise();
+
     if (res.statusCode == 200) {
       //successfull login
-      this.router.navigate(['admin/dashboard'])
     } else {
       //error
     }
