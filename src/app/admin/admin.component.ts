@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  public show:boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onShowChange($event:any){
+    this.show = !this.show;
+    console.log("even : ",$event);
   }
 
 }
