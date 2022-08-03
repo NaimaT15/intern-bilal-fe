@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  show:boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  togglerMenu(){
+    this.show = !this.show;
   }
 
 }
