@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    this.router.navigate(['admin/dashboard']);
+    // this.router.navigate(['admin/dashboard']);
     var res = await this.loginService.login(this.login).toPromise();
 
     if (res.statusCode == 200) {
