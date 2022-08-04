@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
-import { FormlyMaterialModule } from '@ngx-formly/material';
+// import { FormlyMaterialModule } from '@ngx-formly/material';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -21,7 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NgbModule,
     ReactiveFormsModule,
     FormlyModule.forRoot(),
-    FormlyMaterialModule,
+    // FormlyMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
