@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { UserformComponent } from './userform/userform.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     DashboardComponent,
     SidebarComponent,
     HeaderComponent,
+    UserformComponent,
   ],
   imports: [
     CommonModule,
