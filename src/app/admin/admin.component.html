@@ -1,5 +1,5 @@
-<app-header (show)="onShowChange($event)"></app-header>
+<app-header></app-header>
 <app-sidebar></app-sidebar>
-<div [ngClass]="{'left': show,'full':!show}">
-    <router-outlet></router-outlet>
+<div>
+  <router-outlet></router-outlet>
 </div>
