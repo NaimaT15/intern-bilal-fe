@@ -9,7 +9,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: 'dashboard',
+        path: '',
         component: DashboardComponent,
       },
     ],
