@@ -10,6 +10,7 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { UserformComponent } from './userform/userform.component';
+import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserformComponent } from './userform/userform.component';
     SidebarComponent,
     HeaderComponent,
     UserformComponent,
+    PhotoBasedFormComponent,
   ],
   imports: [
     CommonModule,

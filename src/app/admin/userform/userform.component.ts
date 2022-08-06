@@ -10,12 +10,6 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./userform.component.scss'],
 })
 export class UserformComponent implements OnInit {
-  userData = {
-    full_name: '',
-    username: '',
-    email: '',
-    phonenumbe: '',
-  };
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
@@ -58,7 +52,7 @@ export class UserformComponent implements OnInit {
       },
     },
     {
-      key: 'Role',
+      key: 'role',
       type: 'select',
       templateOptions: {
         label: 'Enter Role',
