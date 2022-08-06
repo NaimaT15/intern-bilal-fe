@@ -24,7 +24,14 @@ import { UserformComponent } from './userform/userform.component';
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot({
+      validationMessages: [
+        {
+          name: 'required',
+          message: 'This field is required',
+        },
+      ],
+    }),
     FormlyBootstrapModule,
   ],
 })

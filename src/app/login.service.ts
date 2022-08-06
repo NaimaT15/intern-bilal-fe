@@ -19,10 +19,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(loginData: any): Observable<any> {
-    // let data = {
-    //   user_name : loginData.username,
-    //   password: loginData.password
-    // }
-    return this.http.post<any>(ApiUrl.login, loginData,httpOptions);
+    return this.http.post<any>(ApiUrl.login, loginData);
   }
 }

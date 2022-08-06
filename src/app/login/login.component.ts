@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
     username: '',
     password: '',
   };
+  message!: string;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -25,13 +26,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    // this.router.navigate(['admin/dashboard']);
     var res = await this.loginService.login(this.login).toPromise();
 
     if (res.statusCode == 200) {
+      this.router.navigate(['admin/dashboard']);
       //successfull login
     } else {
-      //error
+      this.message = res.message;
     }
   }
 }
