@@ -1,0 +1,27 @@
+
+#search-bar{
+
+        background-color: #393b3f;
+        padding: 100px 100px;
+    
+}
+form{
+    display: flex;
+    
+    input{
+        flex: 1;
+        border: none;
+        outline: none;
+
+    }
+    button{
+        color: #233835;
+        border: none;
+        outline: none;
+        letter-spacing: 1px;
+        background-color: #50e3c2;
+        &:hover{
+            background-color: #51c3aa;
+        }
+    }
+}
