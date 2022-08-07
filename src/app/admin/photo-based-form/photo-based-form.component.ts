@@ -28,7 +28,7 @@ export class PhotoBasedFormComponent implements OnInit {
     },
     {
       key: 'description',
-      type: 'input',
+      type: 'textarea',
       templateOptions: {
         label: 'Description',
         placeholder: 'Item Description',
@@ -52,14 +52,20 @@ export class PhotoBasedFormComponent implements OnInit {
     },
     {
       key: 'role',
-      type: 'file',
+      type: 'input',
       templateOptions: {
+        type: 'image',
         label: 'Enter Role',
         required: true,
+        accept: 'image/*',
       },
     },
   ];
   onSubmit() {
-    console.log('wow');
+    if (this.form.valid) {
+      console.log('COREECT');
+    } else {
+      console.log('error');
+    }
   }
 }

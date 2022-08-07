@@ -41,6 +41,16 @@ export class UserformComponent implements OnInit {
       },
     },
     {
+      key: 'password',
+      type: 'input',
+      templateOptions: {
+        type: 'password',
+        label: 'Enter Password',
+        placeholder: 'Enter Users Password',
+        required: true,
+      },
+    },
+    {
       key: 'email',
       type: 'input',
       templateOptions: {
@@ -69,13 +79,17 @@ export class UserformComponent implements OnInit {
   ];
 
   async onSubmit() {
-    var res = await this.adminservice.addUser(this.form.value).toPromise();
-    console.log(this.form);
+    if (this.form.valid) {
+      var res = await this.adminservice.addUser(this.form.value).toPromise();
+      console.log(this.form);
 
-    if ((res.statuscode = 200)) {
-      console.log('registerd');
+      if ((res.statuscode = 200)) {
+        console.log('registerd');
+      } else {
+        console.log(res.er);
+      }
     } else {
-      console.log(res.er);
+      // form no vaild
     }
   }
 }
