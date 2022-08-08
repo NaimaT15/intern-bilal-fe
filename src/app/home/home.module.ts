@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
+import { AgmCoreModule } from '@agm/core';
 import { HomeComponent } from './home.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { HeaderComponent } from './header/header.component';
 import { LatestComponent } from './latest/latest.component';
-
+import { VisitComponent } from './visit/visit.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,15 @@ import { LatestComponent } from './latest/latest.component';
     CollectionsComponent,
     VirtualTourComponent,
     HeaderComponent,
-    LatestComponent
+    LatestComponent,
+    VisitComponent,
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
-  ]
+    HomeRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: '',
+    }),
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

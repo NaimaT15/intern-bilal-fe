@@ -72,7 +72,7 @@ export class PhotoBasedFormComponent implements OnInit {
         console.log(res.body.message);
       }
     } else {
-      console.log('In Vaild Values');
+      console.log('In Vaild Form  Values');
     }
   }
 }
