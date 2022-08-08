@@ -81,7 +81,6 @@ export class UserformComponent implements OnInit {
   async onSubmit() {
     if (this.form.valid) {
       var res = await this.adminservice.addUser(this.form.value).toPromise();
-      console.log(this.form);
 
       if ((res.statuscode = 200)) {
         console.log('registerd');

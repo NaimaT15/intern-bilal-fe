@@ -13,4 +13,7 @@ export class AdminService {
   addUser(userData: any) {
     return this.http.post<any>(ApiUrl.addUser, userData);
   }
+  addCategory(categoryData: any) {
+    return this.http.post<any>(ApiUrl.addCategory, categoryData);
+  }
 }

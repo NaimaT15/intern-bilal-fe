@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { UserformComponent } from './userform/userform.component';
 import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
+import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.com
     HeaderComponent,
     UserformComponent,
     PhotoBasedFormComponent,
+    CategoriesfFormComponent,
   ],
   imports: [
     CommonModule,

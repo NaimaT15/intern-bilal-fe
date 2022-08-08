@@ -5,4 +5,5 @@ export class ApiUrl {
   public static login = ApiUrl.baseUrl + 'login';
   public static users = ApiUrl.baseUrl + 'users';
   public static addUser = ApiUrl.baseUrl + 'user';
+  public static addCategory = ApiUrl.baseUrl + 'category';
 }
