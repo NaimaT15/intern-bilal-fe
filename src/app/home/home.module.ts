@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { AgmCoreModule } from '@agm/core';
 import { HomeComponent } from './home.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
@@ -19,12 +18,6 @@ import { VisitComponent } from './visit/visit.component';
     LatestComponent,
     VisitComponent,
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: '',
-    }),
-  ],
+  imports: [CommonModule, HomeRoutingModule],
 })
 export class HomeModule {}
