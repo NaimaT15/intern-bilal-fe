@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-photo-based-form',
@@ -12,7 +14,7 @@ export class PhotoBasedFormComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
   formname: string = 'Add A Collection';
-  constructor() {}
+  constructor(private adminservice: AdminService, router: Router) {}
 
   ngOnInit(): void {}
   fields: FormlyFieldConfig[] = [
@@ -61,11 +63,16 @@ export class PhotoBasedFormComponent implements OnInit {
       },
     },
   ];
-  onSubmit() {
+  async onSubmit() {
     if (this.form.valid) {
-      console.log('COREECT');
+      var res = await this.adminservice.addpb(this.form.value).toPromise();
+      if (res.statuscode == 200) {
+        return console.log('sucess');
+      } else {
+        console.log(res.body.message);
+      }
     } else {
-      console.log('error');
+      console.log('In Vaild Values');
     }
   }
 }

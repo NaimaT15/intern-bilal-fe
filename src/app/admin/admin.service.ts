@@ -16,4 +16,7 @@ export class AdminService {
   addCategory(categoryData: any) {
     return this.http.post<any>(ApiUrl.addCategory, categoryData);
   }
+  addpb(pdData: any) {
+    return this.http.post<any>(ApiUrl.addPb, pdData);
+  }
 }
