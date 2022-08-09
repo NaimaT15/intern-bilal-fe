@@ -15,6 +15,18 @@ const routes: Routes = [
         path: '',
         component: DashboardComponent,
       },
+      // {
+      //   path: 'adduser',
+      //   component: UserformComponent,
+      // },
+      // {
+      //   path: 'addcollection',
+      //   component: PhotoBasedFormComponent,
+      // },
+      // {
+      //   path: 'add-cat',
+      //   component: CategoriesfFormComponent,
+      // },
       {
         path: 'adduser',
         component: UserformComponent,
