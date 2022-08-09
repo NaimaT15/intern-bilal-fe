@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,9 @@ export class LoginComponent implements OnInit {
     username: '',
     password: '',
   };
+  message!: string;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   onChange(data: string, name: string) {
     if (name == 'name') {
@@ -24,14 +26,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    var res = await this.loginService
-      .login(this.login.username, this.login.password)
-      .toPromise();
+    var res = await this.loginService.login(this.login).toPromise();
 
     if (res.statusCode == 200) {
+      this.router.navigate(['admin/dashboard']);
       //successfull login
     } else {
-      //error
+      this.message = res.message;
     }
   }
 }

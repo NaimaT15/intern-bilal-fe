@@ -8,25 +8,30 @@ import { LatestComponent } from './latest/latest.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent,
-    children:[
+    path: '',
+    component: HomeComponent,
+    children: [
       {
-        path:'collections',
-        component:CollectionsComponent
+        path: 'collections',
+        component: CollectionsComponent,
       },
       {
-        path:'virtual',
-        component:VirtualTourComponent
+        path: 'virtual',
+        component: VirtualTourComponent,
       },
+<<<<<<< HEAD
       {path:'visit',component:ExiptionComponent},
    
     ]
   }
+=======
+    ],
+  },
+>>>>>>> a68ddc284438719d03b118722a68d2a6ae8fc9cc
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
