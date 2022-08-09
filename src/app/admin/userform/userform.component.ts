@@ -26,7 +26,6 @@ export class UserformComponent implements OnInit {
       templateOptions: {
         label: 'Full Name',
         placeholder: 'Enter Your Full Name',
-
         required: true,
       },
     },
@@ -36,7 +35,6 @@ export class UserformComponent implements OnInit {
       templateOptions: {
         label: 'Enter Username',
         placeholder: 'Enter Your User Name',
-
         required: true,
       },
     },

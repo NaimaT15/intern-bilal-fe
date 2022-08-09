@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionsComponent } from './collections/collections.component';
 import { HomeComponent } from './home.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
+import { VisitComponent } from './visit/visit.component';
 
 const routes: Routes = [
   {

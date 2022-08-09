@@ -52,16 +52,16 @@ export class PhotoBasedFormComponent implements OnInit {
         required: true,
       },
     },
-    {
-      key: 'role',
-      type: 'input',
-      templateOptions: {
-        type: 'image',
-        label: 'Enter Role',
-        required: true,
-        accept: 'image/*',
-      },
-    },
+    // {
+    //   key: 'image',
+    //   type: 'file',
+    //   // templateOptions: {
+    //   // type: 'image',
+    //   // label: 'Enter Image',
+    //   // required: true,
+    //   // accept: 'image/*',
+    //   // },
+    // },
   ];
   async onSubmit() {
     if (this.form.valid) {
