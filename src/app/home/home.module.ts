@@ -22,6 +22,10 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     HomeRoutingModule
+  ],
+  exports:[
+HeaderComponent,
+FooterComponent
   ]
 })
 export class HomeModule { }

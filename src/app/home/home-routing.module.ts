@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionsComponent } from './collections/collections.component';
 import { HomeComponent } from './home.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
+import { ExiptionComponent } from './exiption/exiption.component';
+import { LatestComponent } from './latest/latest.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,8 @@ const routes: Routes = [
         path:'virtual',
         component:VirtualTourComponent
       },
+      {path:'visit',component:ExiptionComponent},
+   
     ]
   }
 ];

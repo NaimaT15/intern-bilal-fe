@@ -9,11 +9,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ExiptionComponent } from './exiption/exiption.component';
+import { ExiptionComponent } from './home/exiption/exiption.component';
+import { HomeModule } from './home/home.module';
+import { DescriptionComponent } from './description/description.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NotFoundComponent, ExiptionComponent, ],
-  imports: [BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,  NgbModule],
+  declarations: [AppComponent, LoginComponent, NotFoundComponent, ExiptionComponent, DescriptionComponent, ],
+  imports: [BrowserModule,FormsModule,HttpClientModule, AppRoutingModule,  NgbModule, HomeModule,],
 
   providers: [],
   bootstrap: [AppComponent],

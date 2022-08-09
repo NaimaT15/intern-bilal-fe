@@ -1,26 +1,50 @@
 <nav class="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand">Bilalul-habeshi</a>
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link"routerLink="visit">Visit us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"routerLink="whats">What's on</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"href="/">Collections</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="contact">Contacht Us</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Admin</a>
-        </li>
-      </ul>
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg></a>
- 
-    </div>
-  </nav>
+  <div class="container-fluid">
+    <a class="navbar-brand">Bilalul-habeshi</a>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="visit">Visit us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="whats">What's on</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="contact">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">Donate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Admin</a>
+      </li>
+    </ul>
+    <a href="#"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-search"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+        /></svg
+    ></a>
+  </div>
+</nav>
