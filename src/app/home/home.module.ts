@@ -7,6 +7,8 @@ import { CollectionsComponent } from './collections/collections.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LatestComponent } from './latest/latest.component';
+import { VisitComponent } from './visit/visit.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     VirtualTourComponent,
     HeaderComponent,
     FooterComponent,
+    LatestComponent,
+    VisitComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
 })

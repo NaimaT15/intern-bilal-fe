@@ -1,20 +1,57 @@
-<div class="login-box">
-  <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-header text-center">
-      <a href="/" class="h3">Bilalul-habeshi</a>
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <!-- /.login-logo -->
+    <div class="login logo text-center">
+      <a href="/login" class="h3">Bilalul-habeshi</a>
     </div>
-    <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+    <div class="card card-outline card-primary">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
 
-      <div class="form-group">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              required
+              [ngModel]="login.username"
+              (ngModelChange)="onChange($event, 'name')"
+              #name="ngModel"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-person-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="name.invalid && (name.touched || name.dirty)">
+            <div *ngIf="name.errors?.['required']">
+              <div class="text center" style="color: red">
+                UserName is required
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="input-group mb-3">
           <input
-            type="text"
-            class="form-control"
-            placeholder="Username"
-            [ngModel]="login.username"
-            (ngModelChange)="onChange($event,'name')"
+            type="password"
+            class="form-control mx-auto"
+            placeholder="Password"
+            name="password"
+            [ngModel]="login.password"
+            (ngModelChange)="onChange($event, 'pass')"
           />
           <div class="input-group-append">
             <div class="input-group-text">
@@ -23,53 +60,34 @@
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-person-fill"
+                class="bi bi-lock-fill"
                 viewBox="0 0 16 16"
               >
                 <path
-                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                  d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
                 />
               </svg>
             </div>
           </div>
         </div>
-      </div>
-      <div class="input-group mb-3">
-        <input
-          type="password"
-          class="form-control mx-auto"
-          placeholder="Password"
-          name="password"
-          [ngModel]="login.password"
-          (ngModelChange)="onChange($event,'pass')"
-        />
-        <div class="input-group-append">
-          <div class="input-group-text">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-lock-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
-              />
-            </svg>
+        <div *ngIf="name.touched || name.dirty">
+          <div *ngIf="message">
+            <div class="text center danger" style="color: red">
+              {{ message }}
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div>
+            <button (click)="onSubmit()" class="btn btn-primary btn-block">
+              Sign In
+            </button>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div>
-          <button (click)="onSubmit()" class="btn btn-primary btn-block">
-            Sign In
-          </button>
-        </div>
-      </div>
+      <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
+    <!-- /.card -->
   </div>
-  <!-- /.card -->
-</div>
-<!-- /.login-box -->
+  <!-- /.login-box -->
+</body>

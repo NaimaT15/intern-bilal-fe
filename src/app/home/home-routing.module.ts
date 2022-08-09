@@ -6,23 +6,23 @@ import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent,
-    children:[
+    path: '',
+    component: HomeComponent,
+    children: [
       {
-        path:'collections',
-        component:CollectionsComponent
+        path: 'collections',
+        component: CollectionsComponent,
       },
       {
-        path:'virtual',
-        component:VirtualTourComponent
+        path: 'virtual',
+        component: VirtualTourComponent,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
