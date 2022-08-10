@@ -12,6 +12,7 @@ import { FormlyModule } from '@ngx-formly/core';
 import { DescriptionComponent } from './description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,6 @@ import { HeaderComponent } from './home/header/header.component';
   ],
   exports: [],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, HomeComponent, HeaderComponent],
 })
 export class AppModule {}
