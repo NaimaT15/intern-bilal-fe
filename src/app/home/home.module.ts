@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LatestComponent } from './latest/latest.component';
 import { VisitComponent } from './visit/visit.component';
+import { ExiptionComponent } from './exiption/exiption.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +20,9 @@ import { VisitComponent } from './visit/visit.component';
     FooterComponent,
     LatestComponent,
     VisitComponent,
+    ExiptionComponent,
   ],
-<<<<<<< HEAD
-  imports: [
-    CommonModule,
-    HomeRoutingModule
-  ],
-  exports:[
-HeaderComponent,
-FooterComponent
-  ]
-=======
   imports: [CommonModule, HomeRoutingModule],
->>>>>>> a68ddc284438719d03b118722a68d2a6ae8fc9cc
+  exports: [HeaderComponent, FooterComponent],
 })
 export class HomeModule {}

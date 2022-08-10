@@ -1,24 +1,12 @@
-<<<<<<< HEAD
 nav {
-    background-color: #232425;
     a {
         color: #ffffff;
         &:hover {
             color: wheat;
+            background-color: #00000065;
         }
     }
-}
-=======
-nav{
-    a{
-    color: #ffffff;
-    &:hover{
-        color: wheat;
-        background-color: #00000065;
+    .dropdown-menu {
+        background-color: black;
     }
 }
-.dropdown-menu{
-    background-color: black;
-}
-}
->>>>>>> 4c1e22946bcb28f72d58484dc6e29fe6b3190b1d

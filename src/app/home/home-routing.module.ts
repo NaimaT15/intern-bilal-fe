@@ -3,12 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionsComponent } from './collections/collections.component';
 import { HomeComponent } from './home.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
-<<<<<<< HEAD
+
 import { VisitComponent } from './visit/visit.component';
-=======
+
 import { ExiptionComponent } from './exiption/exiption.component';
 import { LatestComponent } from './latest/latest.component';
->>>>>>> 4c1e22946bcb28f72d58484dc6e29fe6b3190b1d
 
 const routes: Routes = [
   {
@@ -23,15 +22,10 @@ const routes: Routes = [
         path: 'virtual',
         component: VirtualTourComponent,
       },
-<<<<<<< HEAD
-      {path:'visit',component:ExiptionComponent},
-   
-    ]
-  }
-=======
+
+      { path: 'visit', component: VisitComponent },
     ],
   },
->>>>>>> a68ddc284438719d03b118722a68d2a6ae8fc9cc
 ];
 
 @NgModule({
