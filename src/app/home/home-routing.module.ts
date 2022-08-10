@@ -15,14 +15,6 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'visit',
-        component: VisitComponent,
-      },
-      {
-        path: 'collections',
-        component: CollectionsComponent,
-      },
-      {
         path: 'virtual',
         component: VirtualTourComponent,
       },
