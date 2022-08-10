@@ -11,18 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'whats', component: ExiptionComponent },
-  { path: 'contact', component: ExiptionComponent },
-  { path: 'veiw', component: DescriptionComponent },
-
   {
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
-  {
-    path: 'visit',
-    component: VisitComponent,
-  },
+  { path: 'whats', component: ExiptionComponent },
+  { path: 'view', component: DescriptionComponent },
   {
     path: 'login',
     component: LoginComponent,

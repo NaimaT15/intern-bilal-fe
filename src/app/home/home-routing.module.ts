@@ -15,6 +15,10 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: 'visit',
+        component: VisitComponent,
+      },
+      {
         path: 'collections',
         component: CollectionsComponent,
       },
@@ -22,8 +26,6 @@ const routes: Routes = [
         path: 'virtual',
         component: VirtualTourComponent,
       },
-
-      { path: 'visit', component: VisitComponent },
     ],
   },
 ];

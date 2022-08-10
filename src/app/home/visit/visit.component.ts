@@ -7,7 +7,7 @@ import { Loader } from '@googlemaps/js-api-loader';
   styleUrls: ['./visit.component.scss'],
 })
 export class VisitComponent implements OnInit {
-  title = 'Out Location';
+  title = 'Our Location';
   center: google.maps.LatLngLiteral = { lat: 30, lng: -110 };
 
   constructor() {}
@@ -16,11 +16,10 @@ export class VisitComponent implements OnInit {
     let loader = new Loader({
       apiKey: 'AIzaSyCCseUfKPCqLWApllfFAP1XUdOvv3VcG7M',
     });
-    loader.load().then(() => {
-      new google.maps.Map(document.getElementById('map')!, {
-        center: { lat: 51.233334, lng: 6.783333 },
-        zoom: 6,
-      });
+    console.log('Hello');
+    new google.maps.Map(document.getElementById('map')! as HTMLElement, {
+      center: this.center,
+      zoom: 6,
     });
   }
 }

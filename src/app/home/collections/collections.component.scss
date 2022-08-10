@@ -1,26 +1,22 @@
-
-#search-bar{
-
-        background-color: #393b3f;
-        padding: 100px 100px;
-    
+#search-bar {
+    background-color: #393b3f;
+    padding: 100px 100px;
 }
-form{
+form {
     display: flex;
-    
-    input{
+
+    input {
         flex: 1;
         border: none;
         outline: none;
-
     }
-    button{
-        color: #233835;
+    button {
+        color: #ffffff;
         border: none;
         outline: none;
         letter-spacing: 1px;
-        background-color: #50e3c2;
-        &:hover{
+        background-color: #56a94f;
+        &:hover {
             background-color: #51c3aa;
         }
     }
