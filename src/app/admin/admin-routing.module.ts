@@ -5,6 +5,7 @@ import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
 import { UserformComponent } from './userform/userform.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: '',
         component: DashboardComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
       },
       {
         path: 'adduser',
