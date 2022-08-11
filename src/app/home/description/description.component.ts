@@ -16,9 +16,6 @@ export class DescriptionComponent implements OnInit {
   });*/
   }
 
-  
+
 
 }
-
-
-
