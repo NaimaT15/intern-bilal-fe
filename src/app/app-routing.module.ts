@@ -9,15 +9,24 @@ import { LatestComponent } from './home/latest/latest.component';
 
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CategoryComponent } from './home/category/category.component';
 
 const routes: Routes = [
+  { path: 'whats', component: ExiptionComponent },
+  { path: 'collection', component: CategoryComponent },
+
   {
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
-  { path: 'collections', component: ExiptionComponent },
+
   { path: 'view', component: DescriptionComponent },
-  { path: 'visit', component: VisitComponent },
+
+  {
+    path: 'visit',
+    component: VisitComponent,
+  },
+
   {
     path: 'login',
     component: LoginComponent,

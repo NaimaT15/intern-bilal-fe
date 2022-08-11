@@ -26,7 +26,7 @@ export class VisitComponent implements OnInit {
         position: this.location,
         map: new google.maps.Map(document.getElementById('map')!, {
           center: this.location,
-          zoom: 6,
+          zoom: 18,
         }),
       });
     });
