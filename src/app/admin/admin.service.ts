@@ -22,6 +22,12 @@ export class AdminService {
   getUsers() {
     return this.http.get<USER[]>(ApiUrl.users);
   }
+  getCategories() {
+    return this.http.get<Category[]>(ApiUrl.catogries);
+  }
+  getPhoto() {
+    return this.http.get<Photo[]>(ApiUrl.Photos);
+  }
 }
 export interface USER {
   id?: number;
@@ -30,4 +36,14 @@ export interface USER {
   email: string;
   password: string;
   role_id: number;
+}
+export interface Category {
+  name: string;
+}
+export interface Photo {
+  name: string;
+  description: string;
+  category: string;
+  photo: File;
+  code: string;
 }

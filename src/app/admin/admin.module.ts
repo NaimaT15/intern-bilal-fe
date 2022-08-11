@@ -15,6 +15,8 @@ import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.co
 import { FileValueAccessor } from './photo-based-form/photo-based-form.accessor';
 import { UsersComponent } from './users/users.component';
 import { FooterComponent } from './footer/footer.component';
+import { PhotosComponent } from './photos/photos.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     FileValueAccessor,
     UsersComponent,
     FooterComponent,
+    PhotosComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,

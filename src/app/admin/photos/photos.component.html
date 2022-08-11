@@ -29,7 +29,7 @@
                   class="btn btn-outline-primary float-sm-right"
                   href="/admin/addcollection"
                 >
-                  Add New User
+                  Add New Arifact
                 </a>
               </div>
               <!-- /.card-header -->
@@ -37,31 +37,31 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>Full Name</th>
-                      <th>UserName</th>
-                      <th>Email</th>
-                      <th>Role</th>
+                      <th>ArifactName</th>
+                      <th>Arifact Description</th>
+                      <th>Arifact Category</th>
+                      <th>Arifact Code</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let user of users">
-                      <td>{{ user.full_name }}</td>
-                      <td>{{ user.user_name }}</td>
-                      <td>{{ user.email }}</td>
-                      <td>{{ user.role_id }}</td>
+                    <tr *ngFor="let ph of photos">
+                      <td>{{ ph.name }}</td>
+                      <td>{{ ph.description }}</td>
+                      <td>{{ ph.category }}</td>
+                      <td>{{ ph.code }}</td>
                       <td>X</td>
                     </tr>
                   </tbody>
                   <!-- <tfoot>
-                    <tr>
-                      <th>Rendering engine</th>
-                      <th>Browser</th>
-                      <th>Platform(s)</th>
-                      <th>Engine version</th>
-                      <th>CSS grade</th>
-                    </tr> 
-                  </tfoot>-->
+                        <tr>
+                          <th>Rendering engine</th>
+                          <th>Browser</th>
+                          <th>Platform(s)</th>
+                          <th>Engine version</th>
+                          <th>CSS grade</th>
+                        </tr> 
+                      </tfoot>-->
                 </table>
               </div>
               <!-- /.card-body -->
