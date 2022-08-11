@@ -13,6 +13,7 @@ import { UserformComponent } from './userform/userform.component';
 import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
 import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.component';
 import { FileValueAccessor } from './photo-based-form/photo-based-form.accessor';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FileValueAccessor } from './photo-based-form/photo-based-form.accessor'
     CategoriesfFormComponent,
     PhotoBasedFormComponent,
     FileValueAccessor,
+    UsersComponent,
   ],
   imports: [
     CommonModule,

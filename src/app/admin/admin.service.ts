@@ -19,4 +19,7 @@ export class AdminService {
   addpb(pdData: any) {
     return this.http.post<any>(ApiUrl.addPb, pdData);
   }
+  getUsers() {
+    return this.http.get<any>(ApiUrl.users);
+  }
 }
