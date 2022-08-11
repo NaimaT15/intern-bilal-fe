@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DescriptionComponent } from './description/description.component';
+import { DescriptionComponent } from './home/description/description.component';
 import { ExiptionComponent } from './home/exiption/exiption.component';
 import { VisitComponent } from './home/visit/visit.component';
 

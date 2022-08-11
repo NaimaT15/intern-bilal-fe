@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LatestComponent } from './latest/latest.component';
 import { VisitComponent } from './visit/visit.component';
 import { ExiptionComponent } from './exiption/exiption.component';
+import { DescriptionComponent } from './description/description.component';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ExiptionComponent } from './exiption/exiption.component';
     LatestComponent,
     VisitComponent,
     ExiptionComponent,
+    DescriptionComponent,
   ],
   imports: [
     CommonModule,
