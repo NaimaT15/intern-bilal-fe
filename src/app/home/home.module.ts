@@ -12,6 +12,7 @@ import { LatestComponent } from './latest/latest.component';
 import { VisitComponent } from './visit/visit.component';
 import { ExiptionComponent } from './exiption/exiption.component';
 import { DescriptionComponent } from './description/description.component';
+import { CategoryComponent } from './category/category.component';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -25,6 +26,7 @@ import { DescriptionComponent } from './description/description.component';
     VisitComponent,
     ExiptionComponent,
     DescriptionComponent,
+    CategoryComponent,
   ],
   imports: [
     CommonModule,
