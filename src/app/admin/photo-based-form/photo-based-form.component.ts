@@ -23,8 +23,17 @@ export class PhotoBasedFormComponent implements OnInit {
       type: 'input',
       templateOptions: {
         label: 'Name',
-        placeholder: 'Enter Your Item Name',
+        placeholder: 'Enter Your Artifact Name',
 
+        required: true,
+      },
+    },
+    {
+      key: 'code',
+      type: 'input',
+      templateOptions: {
+        label: 'Artifact',
+        placeholder: 'Enter Artifact Code',
         required: true,
       },
     },
@@ -33,7 +42,7 @@ export class PhotoBasedFormComponent implements OnInit {
       type: 'textarea',
       templateOptions: {
         label: 'Description',
-        placeholder: 'Item Description',
+        placeholder: 'Artifact Description',
 
         required: true,
       },
@@ -43,7 +52,7 @@ export class PhotoBasedFormComponent implements OnInit {
       type: 'select',
       templateOptions: {
         label: 'Category',
-        placeholder: 'Enter Categoray',
+        placeholder: 'Enter Artifact Categoray',
         options: [
           { label: 'Traditional Items', value: 'iron_man' },
           { label: 'Picture', value: 'captain_america' },

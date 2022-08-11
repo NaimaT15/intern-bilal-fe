@@ -20,6 +20,14 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.addPb, pdData);
   }
   getUsers() {
-    return this.http.get<any>(ApiUrl.users);
+    return this.http.get<USER[]>(ApiUrl.users);
   }
+}
+export interface USER {
+  id?: number;
+  full_name: string;
+  user_name: string;
+  email: string;
+  password: string;
+  role_id: number;
 }
