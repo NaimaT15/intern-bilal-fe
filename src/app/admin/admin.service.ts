@@ -17,6 +17,11 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.addCategory, categoryData);
   }
   addpb(pdData: any) {
+    var formData = new FormData(pdData);
+    // this.model.photo = this.model.photo[0];
+    // for (const key in body) {
+    //   formParams.append(`${key}`, `${body[key]}`);
+    // }
     return this.http.post<any>(ApiUrl.addPb, pdData);
   }
   getUsers() {
