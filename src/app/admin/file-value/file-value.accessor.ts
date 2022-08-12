@@ -15,7 +15,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 // https://github.com/angular/angular/issues/7341
 export class FileValueAccessor implements ControlValueAccessor {
   value: any;
-  onChange = () => {};
+  onChange = (_: any) => {};
   onTouched = () => {};
 
   writeValue(value: any) {}

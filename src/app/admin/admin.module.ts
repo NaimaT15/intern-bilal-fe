@@ -12,11 +12,12 @@ import { HeaderComponent } from './header/header.component';
 import { UserformComponent } from './userform/userform.component';
 import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
 import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.component';
-import { FileValueAccessor } from './photo-based-form/photo-based-form.accessor';
+import { FileValueAccessor } from './file-value/file-value.accessor';
 import { UsersComponent } from './users/users.component';
 import { FooterComponent } from './footer/footer.component';
 import { PhotosComponent } from './photos/photos.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { FormlyFieldFile } from './file-value/file-value.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CategoriesComponent } from './categories/categories.component';
     FooterComponent,
     PhotosComponent,
     CategoriesComponent,
+    FormlyFieldFile,
   ],
   imports: [
     CommonModule,
@@ -40,18 +42,17 @@ import { CategoriesComponent } from './categories/categories.component';
     ReactiveFormsModule,
     FormsModule,
     FormlyModule.forRoot({
+      types: [
+        {
+          name: 'file',
+          component: FormlyFieldFile,
+          wrappers: ['form-field'],
+        },
+      ],
       validationMessages: [
         {
           name: 'required',
           message: 'This field is required',
-        },
-      ],
-
-      types: [
-        {
-          name: 'file',
-          component: PhotoBasedFormComponent,
-          wrappers: ['form-field'],
         },
       ],
     }),
