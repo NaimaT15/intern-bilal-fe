@@ -67,6 +67,7 @@ export class PhotoBasedFormComponent implements OnInit {
     },
   ];
   async onSubmit() {
+    console.log(this.form.value);
     if (this.form.valid) {
       var res = await this.adminservice.addpb(this.form.value).toPromise();
       if (res.statuscode == 200) {
