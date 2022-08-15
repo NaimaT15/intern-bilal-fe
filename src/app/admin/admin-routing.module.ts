@@ -35,7 +35,7 @@ const routes: Routes = [
         component: UserformComponent,
       },
       {
-        path: 'addcollection',
+        path: 'addph',
         component: PhotoBasedFormComponent,
       },
       {

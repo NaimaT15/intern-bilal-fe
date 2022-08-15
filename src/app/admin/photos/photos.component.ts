@@ -14,4 +14,11 @@ export class PhotosComponent implements OnInit {
   ngOnInit(): void {
     this.adminservice.getPhoto().subscribe((photos) => (this.photos = photos));
   }
+  onDelete(ph: Photo) {
+    this.adminservice
+      .deletephoto(ph)
+      .subscribe(
+        () => (this.photos = this.photos.filter((t) => t.id !== ph.id))
+      );
+  }
 }

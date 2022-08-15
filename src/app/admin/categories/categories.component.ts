@@ -14,4 +14,9 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
   }
+  onDelete(cat: Category) {
+    this.adminservice
+      .deleteCat(cat)
+      .subscribe(() => (this.cats = this.cats.filter((t) => t.id !== cat.id)));
+  }
 }

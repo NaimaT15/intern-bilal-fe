@@ -27,7 +27,7 @@
                 <a
                   type="button"
                   class="btn btn-outline-primary float-sm-right"
-                  href="/admin/addcollection"
+                  href="/admin/adduser"
                 >
                   Add New User
                 </a>
@@ -50,7 +50,23 @@
                       <td>{{ user.user_name }}</td>
                       <td>{{ user.email }}</td>
                       <td>{{ user.role_id }}</td>
-                      <td>X</td>
+                      <td class="product-action d-flex">
+                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                          <i class="fas fa-folder"></i>
+                          View</a
+                        >
+                        <a class="btn btn-info btn-sm mr-3" [routerLink]="">
+                          <i class="fas fa-pencil-alt"> </i>
+                          Edit
+                        </a>
+                        <a
+                          class="btn btn-danger btn-sm mr-3"
+                          (click)="onDelete(user)"
+                        >
+                          <i class="fas fa-trash"> </i>
+                          Delete
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                   <!-- <tfoot>

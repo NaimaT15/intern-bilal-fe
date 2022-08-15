@@ -44,7 +44,26 @@
                   <tbody>
                     <tr *ngFor="let cat of cats">
                       <td>{{ cat.name }}</td>
-                      <td>X</td>
+                      <td>
+                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                          <i class="fas fa-folder"></i>
+                          View</a
+                        >
+                        <a
+                          class="btn btn-info btn-sm mr-3"
+                          [routerLink]="['/admin/ph', cat.id]"
+                        >
+                          <i class="fas fa-pencil-alt"> </i>
+                          Edit
+                        </a>
+                        <a
+                          class="btn btn-danger btn-sm mr-3"
+                          (click)="onDelete(cat)"
+                        >
+                          <i class="fas fa-trash"> </i>
+                          Delete
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                   <!-- <tfoot>

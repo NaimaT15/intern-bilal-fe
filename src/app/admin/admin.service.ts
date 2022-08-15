@@ -10,9 +10,6 @@ import { ApiUrl } from '../app.variable';
 export class AdminService {
   constructor(private http: HttpClient) {}
 
-  addUser(userData: any) {
-    return this.http.post<any>(ApiUrl.addUser, userData);
-  }
   addCategory(categoryData: any) {
     return this.http.post<any>(ApiUrl.addCategory, categoryData);
   }
@@ -22,20 +19,36 @@ export class AdminService {
     for (const key in pdData) {
       formData.append(`${key}`, `${pdData[key]}`);
     }
-    if(pdData.image){
-      formData.append('image',pdData.image);
+    if (pdData.image) {
+      formData.append('image', pdData.image);
     }
     return this.http.post<any>(ApiUrl.addPb, formData);
   }
 
-  getUsers() {
-    return this.http.get<USER[]>(ApiUrl.users);
-  }
   getCategories() {
     return this.http.get<Category[]>(ApiUrl.catogries);
   }
   getPhoto() {
     return this.http.get<Photo[]>(ApiUrl.Photos);
+  }
+  getUsers() {
+    return this.http.get<USER[]>(ApiUrl.users);
+  }
+
+  addUser(userData: any) {
+    return this.http.post<any>(ApiUrl.addUser, userData);
+  }
+  deleteUser(userData: USER) {
+    const url = `${ApiUrl.addUser}/:${userData.id}`;
+    return this.http.delete(url);
+  }
+  deleteCat(catData: Category) {
+    const url = `${ApiUrl.addCategory}/:${catData.id}`;
+    return this.http.delete(url);
+  }
+  deletephoto(phData: Photo) {
+    const url = `${ApiUrl.addPb}/:${phData.id}`;
+    return this.http.delete(url);
   }
 }
 export interface USER {
@@ -47,9 +60,11 @@ export interface USER {
   role_id: number;
 }
 export interface Category {
+  id?: number;
   name: string;
 }
 export interface Photo {
+  id?: number;
   name: string;
   description: string;
   category: string;

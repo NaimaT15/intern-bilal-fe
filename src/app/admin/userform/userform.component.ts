@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -81,7 +82,12 @@ export class UserformComponent implements OnInit {
       var res = await this.adminservice.addUser(this.form.value).toPromise();
 
       if ((res.statuscode = 200)) {
-        console.log('registerd');
+        this.router.navigate(['admin/users']);
+        Swal.fire(
+          'Successfully created',
+          'User Created Sucessfully',
+          'success'
+        );
       } else {
         console.log(res.er);
       }

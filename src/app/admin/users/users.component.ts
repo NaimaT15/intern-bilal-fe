@@ -14,4 +14,12 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.adminservice.getUsers().subscribe((users) => (this.users = users));
   }
+
+  onDelete(user: USER) {
+    this.adminservice
+      .deleteUser(user)
+      .subscribe(
+        () => (this.users = this.users.filter((t) => t.id !== user.id))
+      );
+  }
 }

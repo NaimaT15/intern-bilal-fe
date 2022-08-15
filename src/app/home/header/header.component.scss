@@ -1,19 +1,23 @@
 * {
     background: #56a94f;
+    color: #ffffff;
 }
 nav {
     a {
         color: #ffffff;
         &:hover {
-            color: #becbbd;
-            background-color: #c6cbc5;
+            color: #49eb3e;
+            // background-color: #c6cbc5;
         }
     }
     .dropdown-menu {
         background-color: #56a94f;
     }
 }
+.nav-link {
+    color: #ffffff;
+}
 .brand-image {
-    max-width: 20%;
-    max-height: 20%;
+    max-width: 5%;
+    max-height: 10%;
 }
