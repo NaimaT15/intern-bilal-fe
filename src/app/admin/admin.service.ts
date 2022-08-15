@@ -39,15 +39,15 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.addUser, userData);
   }
   deleteUser(userData: USER) {
-    const url = `${ApiUrl.addUser}/:${userData.id}`;
+    const url = `${ApiUrl.addUser}/${userData.id}`;
     return this.http.delete(url);
   }
   deleteCat(catData: Category) {
-    const url = `${ApiUrl.addCategory}/:${catData.id}`;
+    const url = `${ApiUrl.addCategory}/${catData.id}`;
     return this.http.delete(url);
   }
   deletephoto(phData: Photo) {
-    const url = `${ApiUrl.addPb}/:${phData.id}`;
+    const url = `${ApiUrl.addPb}/${phData.id}`;
     return this.http.delete(url);
   }
 }

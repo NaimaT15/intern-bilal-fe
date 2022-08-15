@@ -15,7 +15,7 @@ export class PhotoBasedFormComponent implements OnInit {
   model: any = {};
   options: FormlyFormOptions = {};
   formname: string = 'Add A Collection';
-  constructor(private adminservice: AdminService, router: Router) {}
+  constructor(private adminservice: AdminService, private router: Router) {}
 
   ngOnInit(): void {}
   fields: FormlyFieldConfig[] = [
@@ -70,17 +70,17 @@ export class PhotoBasedFormComponent implements OnInit {
   async onSubmit() {
     console.log(this.form.value);
     if (this.form.valid) {
-      if (this.model.image.length != null && this.model.image.length != undefined) {
+      if (
+        this.model.image.length != null &&
+        this.model.image.length != undefined
+      ) {
         this.model.image = this.model.image[0];
       }
       var res = await this.adminservice.addpb(this.model).toPromise();
-      console.log("res : ",res);
+      console.log('res : ', res);
       if (res) {
-        Swal.fire(
-          'Successfully created',
-          'your data submitted',
-          'success'
-        )
+        Swal.fire('Successfully created', 'Succesfully Submited', 'success');
+        this.router.navigate(['admin/photos']);
         return console.log('sucess');
       } else {
         console.log(res.body.message);
