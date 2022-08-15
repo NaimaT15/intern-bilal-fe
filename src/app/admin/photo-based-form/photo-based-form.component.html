@@ -22,9 +22,10 @@
           <!-- /.container-fluid -->
         </section>
         <div class="container-fluid">
-          <div class="row">
+          <div class="row justify-content-center">
+            
             <!-- left column -->
-            <div class="col-md-6">
+            <div class="col-md-6" style="width: 90%;">
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
@@ -42,7 +43,7 @@
                         [form]="form"
                       ></formly-form>
 
-                      <div class="card-footer">
+                      <div class="card-footer" (click)="onSubmit()">
                         <button type="submit" class="btn btn-primary">
                           Submit
                         </button>

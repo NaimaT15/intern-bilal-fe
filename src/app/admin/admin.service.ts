@@ -16,14 +16,18 @@ export class AdminService {
   addCategory(categoryData: any) {
     return this.http.post<any>(ApiUrl.addCategory, categoryData);
   }
-  addpb(pdData: any) {
-    var formData = new FormData(pdData);
-    // this.model.photo = this.model.photo[0];
-    // for (const key in body) {
-    //   formParams.append(`${key}`, `${body[key]}`);
-    // }
-    return this.http.post<any>(ApiUrl.addPb, pdData);
+
+  addpb(pdData: any): Observable<any> {
+    var formData = new FormData();
+    for (const key in pdData) {
+      formData.append(`${key}`, `${pdData[key]}`);
+    }
+    if(pdData.image){
+      formData.append('image',pdData.image);
+    }
+    return this.http.post<any>(ApiUrl.addPb, formData);
   }
+
   getUsers() {
     return this.http.get<USER[]>(ApiUrl.users);
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
+import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 
 @Component({
@@ -52,11 +53,11 @@ export class PhotoBasedFormComponent implements OnInit {
       type: 'select',
       templateOptions: {
         label: 'Category',
-        placeholder: 'Enter Artifact Categoray',
+        placeholder: 'choose Artifact Categoray',
         options: [
-          { label: 'Traditional Items', value: 'iron_man' },
-          { label: 'Picture', value: 'captain_america' },
-          { label: 'Traditional Clothes', value: 'black_widow' },
+          { label: 'Traditional Items', value: 1 },
+          { label: 'Picture', value: 2 },
+          { label: 'Traditional Clothes', value: 3 },
         ],
         required: true,
       },
@@ -69,8 +70,17 @@ export class PhotoBasedFormComponent implements OnInit {
   async onSubmit() {
     console.log(this.form.value);
     if (this.form.valid) {
-      var res = await this.adminservice.addpb(this.form.value).toPromise();
-      if (res.statuscode == 200) {
+      if (this.model.image.length != null && this.model.image.length != undefined) {
+        this.model.image = this.model.image[0];
+      }
+      var res = await this.adminservice.addpb(this.model).toPromise();
+      console.log("res : ",res);
+      if (res) {
+        Swal.fire(
+          'Successfully created',
+          'your data submitted',
+          'success'
+        )
         return console.log('sucess');
       } else {
         console.log(res.body.message);
