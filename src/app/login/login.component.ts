@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     username: '',
     password: '',
   };
-  message!: string;
+  message: string = '';
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -26,13 +26,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async onSubmit() {
-    var res = await this.loginService.login(this.login).toPromise();
+    try {
+      var res = await this.loginService.login(this.login).toPromise();
 
-    if (res.statusCode == 200) {
-      this.router.navigate(['admin/dashboard']);
-      //successfull login
-    } else {
-      this.message = res.message;
+      if (res) {
+        this.router.navigate(['admin']);
+      }
+    } catch (err: any) {
+      console.log('err : ', err.error.message);
+      if (err.error.message) {
+        this.message = err.error.message;
+      }
     }
   }
 }

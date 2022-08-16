@@ -11,7 +11,7 @@ export class AdminService {
   constructor(private http: HttpClient) {}
 
   addCategory(categoryData: any) {
-    return this.http.post<any>(ApiUrl.addCategory, categoryData);
+    return this.http.post<any>(ApiUrl.category, categoryData);
   }
 
   addpb(pdData: any): Observable<any> {
@@ -25,25 +25,52 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.addPb, formData);
   }
 
+  updatePhotoBasedWithImage(pdData: any): Observable<any> {
+    var formData = new FormData();
+    for (const key in pdData) {
+      formData.append(`${key}`, `${pdData[key]}`);
+    }
+    if (pdData.image) {
+      formData.append('image', pdData.image);
+    }
+    return this.http.patch<any>(`${ApiUrl.photoBased}/${pdData.id}`, formData);
+  }
+
+  updatePhotoBasedWithOutImage(pdData: any): Observable<any> {
+    return this.http.patch<any>(
+      `${ApiUrl.updateWithoutImagePb}/${pdData.id}`,
+      pdData
+    );
+  }
+
   getCategories() {
     return this.http.get<Category[]>(ApiUrl.catogries);
   }
   getPhoto() {
     return this.http.get<Photo[]>(ApiUrl.Photos);
   }
+
+  gitSinglePhotoBased(id: any): Observable<any> {
+    return this.http.get<Photo[]>(`${ApiUrl.photoBased}/${id}`);
+  }
+
   getUsers() {
     return this.http.get<USER[]>(ApiUrl.users);
   }
 
+  getSinglePhotoBased(id: any): Observable<any> {
+    return this.http.get<any>(`${ApiUrl.photoBased}/${id}`);
+  }
+
   addUser(userData: any) {
-    return this.http.post<any>(ApiUrl.addUser, userData);
+    return this.http.post<any>(ApiUrl.user, userData);
   }
   deleteUser(userData: USER) {
-    const url = `${ApiUrl.addUser}/${userData.id}`;
+    const url = `${ApiUrl.user}/${userData.id}`;
     return this.http.delete(url);
   }
   deleteCat(catData: Category) {
-    const url = `${ApiUrl.addCategory}/${catData.id}`;
+    const url = `${ApiUrl.category}/${catData.id}`;
     return this.http.delete(url);
   }
   deletephoto(phData: Photo) {
