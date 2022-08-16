@@ -12,20 +12,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './home/category/category.component';
 
 const routes: Routes = [
-  { path: 'whats', component: ExiptionComponent },
-  { path: 'collection', component: CategoryComponent },
-
   {
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
-
-  { path: 'view', component: DescriptionComponent },
-
   {
     path: 'visit',
     component: VisitComponent,
   },
+  { path: 'whats', component: ExiptionComponent },
+  { path: 'collection', component: CategoryComponent },
+
+ 
+
+  { path: 'view', component: DescriptionComponent },
+
+ 
 
   {
     path: 'login',
