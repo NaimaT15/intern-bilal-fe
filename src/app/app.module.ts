@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HashLocationStrategy,LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -28,7 +27,7 @@ import { HomeComponent } from './home/home.component';
     // FormlyModule.forRoot(),
   ],
   exports: [],
-  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent, HomeComponent, HeaderComponent],
 })
 export class AppModule {}

@@ -1,50 +1,17 @@
-<<<<<<< Updated upstream
 * {
     background: #56a94f;
     color: #ffffff;
-=======
-body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial;
-}
-nav{
-    position: fixed;
-    top: 0;
-     left: 0;
-     width: 100%;
-     height: 100px;
-     padding: 10px 90px;
-     box-sizing: border-box;
-     
-     border-bottom: 1px solid #fff;
-}
-nav .logo{
-    padding: 22px 20px;
-    height: 80px;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    color:#fff;
-    
->>>>>>> Stashed changes
 }
 nav {
     a {
-        color:whitesmoke;
-        font-size: 15px;
+        color: #ffffff;
         &:hover {
-<<<<<<< Updated upstream
             color: #49eb3e;
             // background-color: #c6cbc5;
-=======
-            color: #becbbd;
-            background-color:bisque;
->>>>>>> Stashed changes
         }
     }
     .dropdown-menu {
-        background-color:black;
+        background-color: #56a94f;
     }
 }
 .nav-link {
