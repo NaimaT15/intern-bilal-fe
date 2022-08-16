@@ -1,6 +1,4 @@
-* {
-    background: #56a94f;
-    color: #ffffff;
+
 body{
     margin: 0;
     padding: 0;
@@ -14,37 +12,47 @@ nav{
      height: 100px;
      padding: 10px 90px;
      box-sizing: border-box;
-     
+     background:rgba(45, 43, 43, 0.6);
      border-bottom: 1px solid #fff;
 }
-nav .logo{
+span{
     padding: 22px 20px;
     height: 80px;
     float: left;
     font-size: 24px;
     font-weight: bold;
+    text-transform: uppercase;
     color:#fff;
     
+
 }
-nav {
+
+nav ul li {
     a {
-        color:whitesmoke;
+    
+        
         font-size: 15px;
+        color: whitesmoke;
         &:hover {
-            color: #49eb3e;
-            color: #becbbd;
-            background-color:bisque;
+    
+    
+         color: #becbbd;
+            
         }
+        nav ul{
+            list-style: none;
+            float: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+        }
+      
+
     }
     .dropdown-menu {
+        
         background-color:black;
     }
 }
-.nav-link {
-    color: #ffffff;
-}
-.brand-image {
-    max-width: 5%;
-    max-height: 10%;
-}
-}
+
