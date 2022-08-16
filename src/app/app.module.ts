@@ -14,9 +14,11 @@ import { DescriptionComponent } from './home/description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { ModalContentComponent } from './modal-content/modal-content.component';
+import { ModalContainerComponent } from './modal-container/modal-container.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NotFoundComponent],
+  declarations: [AppComponent, LoginComponent, NotFoundComponent, ModalContentComponent, ModalContainerComponent],
   imports: [
     BrowserModule,
     FormsModule,
