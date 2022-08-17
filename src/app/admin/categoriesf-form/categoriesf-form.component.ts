@@ -98,6 +98,7 @@ export class CategoriesfFormComponent implements OnInit {
   }
 
   async onUpdate() {
+    console.log("iside : ",this.model);
     if (this.form.valid) {
       var res = await this.adminservice.updateCategory(this.model).toPromise();
       // routing and swal doest work here even thought the data is registered succesfully

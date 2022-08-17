@@ -14,6 +14,7 @@ import { DescriptionComponent } from './home/description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],
@@ -24,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     // FormlyModule.forRoot(),
   ],
   exports: [],

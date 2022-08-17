@@ -37,4 +37,7 @@ export class UsersComponent implements OnInit {
       }
     });
   }
+  getRoleName(id:number){
+    return id==0?"Super Admin":"Admin";
+  }
 }
