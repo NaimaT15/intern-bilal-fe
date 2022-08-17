@@ -57,9 +57,7 @@ export class CategoriesfFormComponent implements OnInit {
   }
   async fetchDataForEdit() {
     // var res =
-    var res: any = await this.adminservice
-      .getSinglePhotoBased(this.id)
-      .toPromise();
+    var res: any = await this.adminservice.getSinglecat(this.id).toPromise();
     console.log('res : ', res);
     this.model = {
       name: this.data.name,
