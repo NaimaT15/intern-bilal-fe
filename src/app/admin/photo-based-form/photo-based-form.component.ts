@@ -75,11 +75,7 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Category',
             placeholder: 'choose Artifact Categoray',
-            options: [
-              { label: 'Traditional Items', value: 1 },
-              { label: 'Picture', value: 2 },
-              { label: 'Traditional Clothes', value: 3 },
-            ],
+            options: this.adminservice.getCategories(),
             required: true,
           },
         },
@@ -140,11 +136,9 @@ export class PhotoBasedFormComponent implements OnInit {
         templateOptions: {
           label: 'Category',
           placeholder: 'choose Artifact Categoray',
-          options: [
-            { label: 'Traditional Items', value: 1 },
-            { label: 'Picture', value: 2 },
-            { label: 'Traditional Clothes', value: 3 },
-          ],
+          options: this.adminservice.getCategories(),
+          valueProp:'id',
+          labelProp:'name',
           required: true,
         },
       },
