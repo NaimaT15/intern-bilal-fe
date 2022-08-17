@@ -1,58 +1,45 @@
-
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: Arial;
 }
-nav{
+nav {
     position: fixed;
     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100px;
-     padding: 10px 90px;
-     box-sizing: border-box;
-     background:rgba(45, 43, 43, 0.6);
-     border-bottom: 1px solid #fff;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 90px;
+    box-sizing: border-box;
+    background: rgba(45, 43, 43, 0.6);
+    border-bottom: 1px solid #fff;
 }
-span{
+span {
     padding: 22px 20px;
     height: 80px;
     float: left;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    color:#fff;
-    
-
+    color: #fff;
 }
 
 nav ul li {
     a {
-    
-        
         font-size: 15px;
         color: whitesmoke;
         &:hover {
-    
-    
-         color: #becbbd;
-            
+            color: #27c71b;
         }
-        nav ul{
+        nav ul {
             list-style: none;
             float: right;
             margin: 0;
             padding: 0;
             display: flex;
-
         }
-      
-
     }
     .dropdown-menu {
-        
-        background-color:black;
+        background-color: black;
     }
 }
-

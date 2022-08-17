@@ -49,9 +49,15 @@ export class AdminService {
   getPhoto() {
     return this.http.get<Photo[]>(ApiUrl.Photos);
   }
+  getSinglecat(id: any) {
+    return this.http.get<USER[]>(`${ApiUrl.category}/${id}`);
+  }
 
-  gitSinglePhotoBased(id: any): Observable<any> {
-    return this.http.get<Photo[]>(`${ApiUrl.photoBased}/${id}`);
+  getSingleUser(id: any) {
+    return this.http.get<USER[]>(`${ApiUrl.user}/${id}`);
+  }
+  updateUser(userData: any) {
+    return this.http.patch<any>(`${ApiUrl.user}/${userData.id}`, userData);
   }
 
   getUsers() {

@@ -11,8 +11,8 @@ import { AdminService, Photo } from '../admin.service';
 export class PhotosComponent implements OnInit {
   photos: Photo[] = [];
   tableName = 'Artifact';
-  imageUrl:string = "";
-  modalOptions: NgbModalOptions; 
+  imageUrl: string = '';
+  modalOptions: NgbModalOptions;
   constructor(
     private adminservice: AdminService,
     private modalService: NgbModal
@@ -62,11 +62,8 @@ export class PhotosComponent implements OnInit {
     // modalRef.componentInstance.user = this.user;
   }
 
-  open(content: any,data:any) {
+  open(content: any, data: any) {
     this.imageUrl = data.photo_url;
-    this.modalService
-      .open(content,this.modalOptions)
-      .result.then
-      ();
+    this.modalService.open(content, this.modalOptions).result.then();
   }
 }

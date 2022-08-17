@@ -48,7 +48,6 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Name',
             placeholder: 'Enter Your Artifact Name',
-
             required: true,
           },
         },
@@ -67,7 +66,6 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Description',
             placeholder: 'Artifact Description',
-
             required: true,
           },
         },
@@ -105,7 +103,7 @@ export class PhotoBasedFormComponent implements OnInit {
       code: this.data.code,
       description: this.data.description,
       category: this.data.category,
-      id:this.data.id
+      id: this.data.id,
     };
     this.fields = [
       {
@@ -114,7 +112,6 @@ export class PhotoBasedFormComponent implements OnInit {
         templateOptions: {
           label: 'Name',
           placeholder: 'Enter Your Artifact Name',
-
           required: true,
         },
       },
