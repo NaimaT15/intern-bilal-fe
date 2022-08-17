@@ -1,110 +1,109 @@
-
 * {
-    box-sizing: border-box;
-  }
-  
-  section {
-     position: relative;
-      width: 100vw;
-      height: 100vh;
-      background:url('../../../assets/images/2020_02_27_01_05_380006.jpg') no-repeat center center;
-      background-size:cover;  
-      background-size: center;
-  }
-  .overlay{
-    width:100% ;
-    height: 100%;
-    font-size: 26px;
-    display: flex;
-    background-color: rgba(0,0,0,0.5);
-    color: whitesmoke;
-    justify-content:end;
-    align-items:flex-start;
-    flex-direction: column;
-    padding-left: 10%;
-    padding-bottom: 5%;
-  }
-body{
-      /* Workaround for some mobile browsers */
-      min-height:100%;    
-      padding-top: 20px;
-      padding-bottom: 20px;   
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial;
-  }
-  
-  /* Center website */
-  .main {
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  .thumbnail{
-    width: 500px;
-    margin-left: 50%;
-  }
-  
-h3{
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  width: 101vw;
+  height: 200vh;
+  background: url("../../../assets/images/2020_02_27_01_05_380006.jpg") no-repeat center center;
+  background-size: cover;
+  background-size: center;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  justify-content: end;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+body {
+  /* Workaround for some mobile browsers */
+  min-height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.thumbnail {
+  width: 500px;
+  margin-left: 50%;
+}
+
+h3 {
   margin: 10%;
 }
-  h2
-  {margin-left: 10%;}
-  p{
-    margin-left: 10%;
-  }
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 900px) {
-    .thumbnail {
+h2 {
+  margin-left: 10%;
+}
+p {
+  margin-left: 10%;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+  .thumbnail {
     width: 100%;
-    
-    }
   }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .thumbnail {
-  
-    }
-  }.main {
-    background-color: #232425;
-    height: 100%;
-    color: #56a94f f;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .thumbnail {
+  }
+}
+.main {
+  background-color: #232425;
+  height: 100%;
+  color: #56a94f f;
 }
 .margin {
-    margin-right: 100px;
-    margin-left: 100px;
-    margin-top: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 100px;
 }
 main {
-    margin-top: 250px;
-    margin-bottom: 100px;
-    margin-left: 100px;
+  margin-top: 250px;
+  margin-bottom: 100px;
+  margin-left: 100px;
 }
-.row{
+.row {
   padding: auto;
   margin-right: 50px;
-  margin-top:100px ;
+  margin-top: 100px;
 }
 
 .main {
-    background-color: #e9ebe9;
-    height: 100%;
-    color: #56a94f f;
+  background-color: #e9ebe9;
+  height: 100%;
+  color: #56a94f f;
 }
 .margin {
-    margin-right: 100px;
-    margin-left: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
 }
 main {
-    margin-top: 250px;
-    margin-bottom: 200;
+  margin-top: 250px;
+  margin-bottom: 200;
 }
 .full {
-    width: 85vw;
-    height: 80vh;
-    max-width: 375px;
-    max-height: 500px;
-    margin-bottom: 100px;
-    margin-left: 100px;
+  width: 85vw;
+  height: 80vh;
+  max-width: 375px;
+  max-height: 500px;
+  margin-bottom: 100px;
+  margin-left: 100px;
 }
