@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PhotosComponent } from './photos/photos.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FormlyFieldFile } from './file-value/file-value.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { FormlyFieldFile } from './file-value/file-value.component';
       ],
     }),
     FormlyBootstrapModule,
+    MatTabsModule
   ],
 })
 export class AdminModule {}
