@@ -59,8 +59,10 @@ export class CategoriesfFormComponent implements OnInit {
     // var res =
     var res: any = await this.adminservice.getSinglecat(this.id).toPromise();
     console.log('res : ', res);
+    this.data = res[0];
     this.model = {
       name: this.data.name,
+      id: this.data.id,
     };
     this.fields = [
       {
@@ -77,11 +79,9 @@ export class CategoriesfFormComponent implements OnInit {
 
   async onSubmit() {
     if (this.form.valid) {
-      var res = await this.adminservice
-        .addCategory(this.form.value)
-        .toPromise();
+      var res = await this.adminservice.addCategory(this.model).toPromise();
       // routing and swal doest work here even thought the data is registered succesfully
-      if (res.statuscode == 200) {
+      if (res) {
         this.router.navigate(['admin/categories']);
         Swal.fire(
           'Successfully created',
@@ -93,6 +93,27 @@ export class CategoriesfFormComponent implements OnInit {
       }
     } else {
       console.log('error');
+      Swal.fire('Not saved', 'There was error saving your data', 'error');
+    }
+  }
+
+  async onUpdate() {
+    if (this.form.valid) {
+      var res = await this.adminservice.updateCategory(this.model).toPromise();
+      // routing and swal doest work here even thought the data is registered succesfully
+      if (res) {
+        Swal.fire(
+          'Successfully updated',
+          'User Updated Sucessfully',
+          'success'
+        );
+        this.router.navigate(['admin/categories']);
+      } else {
+        //error
+      }
+    } else {
+      console.log('error');
+      Swal.fire('Not saved', 'There was error saving your data', 'error');
     }
   }
 }

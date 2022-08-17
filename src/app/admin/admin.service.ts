@@ -14,6 +14,13 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.category, categoryData);
   }
 
+  updateCategory(categoryData: any) {
+    return this.http.patch<any>(
+      ApiUrl.category + '/' + categoryData.id,
+      categoryData
+    );
+  }
+
   addpb(pdData: any): Observable<any> {
     var formData = new FormData();
     for (const key in pdData) {

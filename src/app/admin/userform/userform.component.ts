@@ -88,11 +88,8 @@ export class UserformComponent implements OnInit {
           templateOptions: {
             label: 'Enter Role',
             options: [
-              { label: 'Iron Man', value: '1' },
-              { label: 'Captain America', value: '2' },
-              { label: 'Black Widow', value: '2' },
-              { label: 'Hulk', value: '3' },
-              { label: 'Captain Marvel', value: '4' },
+              { label: 'Super Admin', value: 0 },
+              { label: 'Admin', value: 1 },
             ],
             required: true,
           },
@@ -103,12 +100,13 @@ export class UserformComponent implements OnInit {
   async fetchDataForEdit() {
     var res: any = await this.adminservice.getSingleUser(this.id).toPromise();
     console.log('res : ', res);
-
+    this.data = res[0];
     this.model = {
-      name: this.data.name,
+      name: this.data.full_name,
       username: this.data.username,
       email: this.data.email,
-      role: this.data.role,
+      role: this.data.role_id,
+      id: this.data.id,
       // id: this.data.id,
     };
     this.fields = [
@@ -130,16 +128,16 @@ export class UserformComponent implements OnInit {
           required: true,
         },
       },
-      // {
-      //   key: 'password',
-      //   type: 'input',
-      //   templateOptions: {
-      //     type: 'password',
-      //     label: 'Enter Password',
-      //     placeholder: 'Enter Users Password',
-      //     required: true,
-      //   },
-      // },
+      {
+        key: 'password',
+        type: 'input',
+        templateOptions: {
+          type: 'password',
+          label: 'Enter Password',
+          placeholder: 'Enter Users Password',
+          required: true,
+        },
+      },
       {
         key: 'email',
         type: 'input',
@@ -157,11 +155,8 @@ export class UserformComponent implements OnInit {
         templateOptions: {
           label: 'Enter Role',
           options: [
-            { label: 'Iron Man', value: 'iron_man' },
-            { label: 'Captain America', value: 'captain_america' },
-            { label: 'Black Widow', value: 'black_widow' },
-            { label: 'Hulk', value: 'hulk' },
-            { label: 'Captain Marvel', value: 'captain_marvel' },
+            { label: 'Super Admin', value: 0 },
+            { label: 'Admin', value: 1 },
           ],
           required: true,
         },
@@ -171,13 +166,32 @@ export class UserformComponent implements OnInit {
 
   async onSubmit() {
     if (this.form.valid) {
-      var res = await this.adminservice.addUser(this.form.value).toPromise();
+      var res = await this.adminservice.addUser(this.model).toPromise();
 
       if ((res.statuscode = 200)) {
         this.router.navigate(['admin/users']);
         Swal.fire(
           'Successfully created',
           'User Created Sucessfully',
+          'success'
+        );
+      } else {
+        console.log(res.er);
+      }
+    } else {
+      // form no vaild
+    }
+  }
+
+  async onUpdate() {
+    if (this.form.valid) {
+      var res = await this.adminservice.updateUser(this.model).toPromise();
+
+      if (res) {
+        this.router.navigate(['admin/users']);
+        Swal.fire(
+          'Successfully updated',
+          'User Uploaded Sucessfully',
           'success'
         );
       } else {
