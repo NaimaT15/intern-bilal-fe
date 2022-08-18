@@ -14,6 +14,7 @@ import { DescriptionComponent } from './home/description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { DonationComponent } from './home/donation/donation.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],

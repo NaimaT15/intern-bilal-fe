@@ -1,6 +1,25 @@
+h1{
+    margin-left: 5%;
+    margin-right: 20%;
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 35px;
+    font-weight: bold;
+    
+    
+}
+p{
+    margin-left: 5%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding-bottom: 3%;
+}
 #search-bar {
     background-color: #cbcfcb;
-    padding: 100px 100px;
+    padding: 70px 70px;
 }
 form {
     display: flex;
@@ -9,6 +28,9 @@ form {
         flex: 1;
         border: none;
         outline: none;
+    }
+    .card-body{
+        padding: 30%;
     }
     button {
         color: #ffffff;

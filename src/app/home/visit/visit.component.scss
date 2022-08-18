@@ -29,9 +29,9 @@ body{
       min-height:100%;    
       padding-top: 20px;
       padding-bottom: 20px;   
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-family: Arial;
+      background-color: #f1f1f1;
+      padding: 20px;
+      font-family: Arial;
   }
   
   /* Center website */
@@ -39,11 +39,8 @@ body{
     max-width: 1000px;
     margin: auto;
   }
-  
-  .thumbnail{
-    width: 500px;
-    margin-left: 50%;
-  }
+
+
   
 h3{
   margin: 10%;
@@ -63,10 +60,9 @@ h3{
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
-    .thumbnail {
-  
-    }
-  }.main {
+    
+  }
+  .main {
     background-color: #232425;
     height: 100%;
     color: #56a94f f;
@@ -81,12 +77,19 @@ main {
     margin-bottom: 100px;
     margin-left: 100px;
 }
-.row{
-  padding: auto;
-  margin-right: 50px;
-  margin-top:100px ;
-}
 
+.col-md-4{
+  padding: 3%;
+  
+}
+.row{
+  width: auto;
+  margin-left: 40px;
+}
+.col-md-4 img{
+  height: 300px;
+  
+}
 .main {
     background-color: #e9ebe9;
     height: 100%;
@@ -99,6 +102,15 @@ main {
 main {
     margin-top: 250px;
     margin-bottom: 200;
+}
+h1{
+  margin-right: 40%;
+  height: 80px;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    color:#fff;
+    margin-bottom: 10%;
 }
 .full {
     width: 85vw;
