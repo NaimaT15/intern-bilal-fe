@@ -37,8 +37,9 @@ h5 {
 // 	margin-left: 100px;
 // 	float: right;
 // }
-#lightbox {
-	width: 100vw;
+#lightbox .carousel-item {
+	width: 80%;
+	max-width: 80%;
 
 	// 	max-width: 1000px;
 	// 	max-height: 500px;
