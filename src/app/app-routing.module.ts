@@ -13,7 +13,7 @@ import { CategoryComponent } from './home/category/category.component';
 import { DonationComponent } from './home/donation/donation.component';
 
 const routes: Routes = [
-  { path: 'whats', component: ExiptionComponent },
+  { path: 'whats', component: CategoryComponent },
   { path: 'collection', component: CategoryComponent },
 
   {

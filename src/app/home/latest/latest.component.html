@@ -1,5 +1,5 @@
 <header class="text-center">
-  <h2 *ngIf="hasRoute('/')">Latest</h2>
+  <ng-container *ngIf="hasRoute('/')"> <h2>Latest</h2></ng-container>
   <div class="container">
     <div
       class="row d-flex flex-wrap align-items-center"
