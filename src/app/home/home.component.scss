@@ -6,7 +6,7 @@ section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url("./../../assets/images/7.jpg") no-repeat center center;
+    background: url("./../../assets/home.jpg") no-repeat center center;
     background-size: cover;
     background-size: center;
 }
@@ -22,7 +22,7 @@ section {
 }
 body {
     background-color: #f1f1f1;
-    padding: 20px;
+    // padding: 20px;
     font-family: Arial;
 }
 .main {
@@ -80,11 +80,7 @@ h3 {
     padding-bottom: 5%;
 }
 .home {
-    background-color: #ffffff;
+    background-color: #f1f1f1;
     height: 100%;
     color: #56a94f f;
-}
-.body {
-    margin-right: 100px;
-    margin-left: 100px;
 }

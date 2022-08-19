@@ -11,6 +11,7 @@ import { AdminService, Category, Photo } from 'src/app/admin/admin.service';
 })
 export class LatestComponent implements OnInit {
   photos: Photo[] = [];
+  categoryNames: any[] = [];
   cats: Category[] = [];
   imageUrl: string = '';
   description: string = '';
@@ -34,7 +35,13 @@ export class LatestComponent implements OnInit {
     };
   }
 
-  ngOnInit(): any {
+  async ngOnInit(): Promise<any> {
+    var res = await this.adminservice.getCategories().toPromise();
+    if (res) {
+      res.forEach((ele) => {
+        this.categoryNames.push(ele);
+      });
+    }
     this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
     this.adminservice.getPhoto().subscribe((photos: any) => {
       this.photos = photos;
@@ -56,5 +63,9 @@ export class LatestComponent implements OnInit {
   }
   hasRoute(route: string) {
     return this.router.url === route;
+  }
+  getCategoryName(id: any) {
+    var res: any = this.categoryNames.filter((ele) => ele.id === id);
+    return res[0].name;
   }
 }
