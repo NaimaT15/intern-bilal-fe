@@ -14,7 +14,7 @@ export class PhotosComponent implements OnInit {
   imageUrl: string = '';
   modalOptions: NgbModalOptions;
   count: any[] = [];
-  categoryNames: any[] = [];
+  categoryNames :any[]=[];
   constructor(
     private adminservice: AdminService,
     private modalService: NgbModal
@@ -26,26 +26,27 @@ export class PhotosComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+
     var res = await this.adminservice.getCategories().toPromise();
-    if (res) {
-      res.forEach((ele) => {
+    if(res){
+      res.forEach(ele=>{
         this.categoryNames.push(ele);
-      });
+      })
     }
-    this.adminservice.getPhoto().subscribe((photos: any) => {
+    this.adminservice.getPhoto().subscribe((photos:any) => {
       this.photos = photos;
       console.log('data  :', photos);
     });
 
     var res = await this.adminservice.getCategories().toPromise();
-    if (res) {
-      this.count = [{ name: 'All', id: 0 }];
-      res.forEach((ele: any) => {
+    if(res){
+      this.count = [{name:"All",id:0}];
+      res.forEach((ele:any)=>{
         this.count.push(ele);
-      });
-      console.log('res : ', this.count);
+      })
+      console.log("res : ",this.count);
     }
-    console.log('res : ', res);
+    console.log("res : ",res);
   }
   onDelete(ph: Photo) {
     Swal.fire({
@@ -70,9 +71,8 @@ export class PhotosComponent implements OnInit {
     });
   }
 
-  getCategoryName(id: any) {
-    var res: any = this.categoryNames.filter((ele) => ele.id === id);
-    return res[0].name;
+  getCategoryName(id:any){
+    return this.categoryNames.filter(ele=> ele.id === id)[0].name;
   }
 
   getLink(link: any) {
