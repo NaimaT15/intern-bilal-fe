@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { AdminService, Photo } from 'src/app/admin/admin.service';
+import { AdminService, Category, Photo } from 'src/app/admin/admin.service';
 
 @Component({
   selector: 'app-latest',
@@ -10,6 +11,8 @@ import { AdminService, Photo } from 'src/app/admin/admin.service';
 })
 export class LatestComponent implements OnInit {
   photos: Photo[] = [];
+  categoryNames: any[] = [];
+  cats: Category[] = [];
   imageUrl: string = '';
   description: string = '';
   modalOptions: NgbModalOptions;
@@ -17,7 +20,8 @@ export class LatestComponent implements OnInit {
   category: any;
   constructor(
     private adminservice: AdminService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) {
     this.modalOptions = {
       fullscreen: true,
@@ -31,21 +35,18 @@ export class LatestComponent implements OnInit {
     };
   }
 
-  async ngOnInit(): Promise<void> {
+  async ngOnInit(): Promise<any> {
+    var res = await this.adminservice.getCategories().toPromise();
+    if (res) {
+      res.forEach((ele) => {
+        this.categoryNames.push(ele);
+      });
+    }
+    this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
     this.adminservice.getPhoto().subscribe((photos: any) => {
       this.photos = photos;
       console.log('data  :', photos);
     });
-
-    var res = await this.adminservice.getCategories().toPromise();
-    if (res) {
-      this.count = [{ name: 'All', id: 0 }];
-      res.forEach((ele: any) => {
-        this.count.push(ele);
-      });
-      console.log('res : ', this.count);
-    }
-    console.log('res : ', res);
   }
   getLink(link: any) {
     // console.log("link : ",link.photo_url);
@@ -59,5 +60,12 @@ export class LatestComponent implements OnInit {
 
     // this.modalService.open(content, this.modalOptions).result.then();
     this.modalService.open(content, this.modalOptions);
+  }
+  hasRoute(route: string) {
+    return this.router.url === route;
+  }
+  getCategoryName(id: any) {
+    var res: any = this.categoryNames.filter((ele) => ele.id === id);
+    return res[0].name;
   }
 }

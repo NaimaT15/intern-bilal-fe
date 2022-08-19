@@ -1,5 +1,5 @@
 body {
-	background-color: #232425;
+	background-color: #f1f1f1;
 }
 
 * {
@@ -32,22 +32,29 @@ h5 {
 		}
 	}
 }
+
+#main-img {
+	margin-bottom: 80px;
+	margin-right: 80px;
+}
+.modal-content {
+	width: 1500px;
+	margin-left: -300px;
+}
 // .text-description {
 // 	margin-right: 100px;
 // 	margin-left: 100px;
 // 	float: right;
 // }
-#lightbox .carousel-item {
-	// width: 100%;
-	max-width: 100%;
-	max-height: 100%;
-	color: beige;
-
-	// 	max-width: 1000px;
-	// 	max-height: 500px;
-	// 	margin-bottom: 100px;
-	// 	margin-left: 100px;
-}
+// #lightbox .carousel-item {
+// 	// width: 100%;
+// 	max-width: 100%;
+// 	max-height: 100%
+// 	// 	max-width: 1000px;
+// 	// 	max-height: 500px;
+// 	// 	margin-bottom: 100px;
+// 	// 	margin-left: 100px;
+// }
 // .my-class {
 // 	width: 8000%;
 // 	max-width: 80%;

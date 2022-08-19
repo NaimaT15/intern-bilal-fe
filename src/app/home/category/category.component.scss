@@ -24,7 +24,7 @@ h1 {
 .row {
 	margin: 10px -16px;
 	padding: 8px;
-	>.column {
+	> .column {
 		padding: 8px;
 	}
 	&:after {
@@ -46,37 +46,32 @@ h1 {
 	display: block;
 }
 .btn {
-	border:black;
+	border: black;
 	padding-left: 3%;
 	padding-right: 3%;
 	outline: none;
-	padding:2%;
+	padding: 2%;
 	background-color: white;
 	cursor: pointer;
 	&:hover {
-		background-color:#56A94f;
+		background-color: #56a94f;
 	}
 }
 .btn.active {
-	background-color: #56A94f;
+	background-color: #56a94f;
 	color: white;
-
 }
-#myBtnContainer{
+#myBtnContainer {
 	text-align: center;
 	text-decoration-line: underline;
-	
-	
-	
 }
-h2{
+h2 {
 	padding-left: 40%;
 	font-weight: bold;
-	background-color: rgb(39, 38, 38);
+
 	color: whitesmoke;
 	padding-top: 5%;
 	padding-bottom: 5%;
 	margin: 3%;
 	width: 100%;
-
 }

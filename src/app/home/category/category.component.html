@@ -1,8 +1,17 @@
 <app-header></app-header>
 <app-collections></app-collections>
+
+<div id="myBtnContainer" style="margin-top: 100px; margin-bottom: -100px">
+  <button class="btn active" onclick="filterSelection('all')">Show all</button>
+  <button class="btn" onclick="filterSelection('nature')">Books</button>
+  <button class="btn" onclick="filterSelection('cars')">
+    Cultural Artifacts
+  </button>
+  <button class="btn" onclick="filterSelection('people')">Documents</button>
+</div>
 <app-latest></app-latest>
 <!-- MAIN (Center website) -->
-<div class="main">
+<!-- <div class="main">
   <h2>Online</h2>
   <hr />
 
@@ -16,111 +25,7 @@
   </div>
 
   <!-- Portfolio Gallery Grid -->
-  <div class="row">
-    <div class="column nature">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Mountains</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column nature">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Lights</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column nature">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Forest</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
+<!-- <app-latest></app-latest>
+</div> -->
 
-    <div class="column cars">
-      <div class="content">
-        <img
-          src="../../../assets/images/dimitar-belchev-fRBpWLAcWIY-unsplash.jpg"
-          alt="Car"
-          style="width: 100%"
-        />
-        <h4>Retro</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column cars">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Fast</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column cars">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Classic</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-
-    <div class="column people">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Girl</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column people">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Man</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <div class="column people">
-      <div class="content">
-        <img
-          src="../../../assets/images/alina-grubnyak-IsxaFsXi2rs-unsplash.jpg"
-          alt="Lights"
-          style="width: 100%"
-        />
-        <h4>Woman</h4>
-        <p>Lorem ipsum dolor..</p>
-      </div>
-    </div>
-    <!-- END GRID -->
-  </div>
-
-  <!-- END MAIN -->
-</div>
 <app-footer></app-footer>
