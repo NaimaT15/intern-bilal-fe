@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './home/category/category.component';
 import { DonationComponent } from './home/donation/donation.component';
+import { PriceComponent } from './home/price/price.component';
 
 const routes: Routes = [
   { path: 'whats', component: CategoryComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
     path: 'contact',
     component: DonationComponent,
   },
+  { path: 'price', component: PriceComponent },
 
   {
     path: 'login',

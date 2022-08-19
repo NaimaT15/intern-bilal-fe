@@ -4,7 +4,7 @@
   }
   
   section {
-     position: relative;
+    //  position: relative;
       width: 100vw;
       height: 100vh;
       background:url('../../../assets/images/2020_02_27_01_05_380006.jpg') no-repeat center center;
@@ -21,16 +21,16 @@
     justify-content:end;
     align-items:flex-start;
     flex-direction: column;
-    padding-left: 10%;
-    padding-bottom: 5%;
+    // padding-left: 10%;
+    // padding-bottom: 5%;
   }
 body{
       /* Workaround for some mobile browsers */
       min-height:100%;    
-      padding-top: 20px;
-      padding-bottom: 20px;   
+      // padding-top: 20px;
+      // padding-bottom: 20px;   
       background-color: #f1f1f1;
-      padding: 20px;
+      // padding: 20px;
       font-family: Arial;
   }
   
@@ -120,3 +120,11 @@ h1{
     margin-bottom: 100px;
     margin-left: 100px;
 }
+
+.custom-font{
+  font: 400 40px Roboto, "Helvetica Neue", sans-serif !important;
+  font-weight: 600;
+  margin-left:50px;
+}
+
+
