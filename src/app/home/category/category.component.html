@@ -2,12 +2,8 @@
 <app-collections></app-collections>
 
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')">Show all</button>
-  <button class="btn" onclick="filterSelection('nature')">Books</button>
-  <button class="btn" onclick="filterSelection('cars')">
-    Cultural Artifacts
-  </button>
-  <button class="btn" onclick="filterSelection('people')">Documents</button>
+  <button class="btn active" (click)="getAll()">Show all</button>
+  <button class="btn" *ngFor="let cat of cats">{{ cat.name }}</button>
 </div>
 <app-latest></app-latest>
 <!-- MAIN (Center website) -->
