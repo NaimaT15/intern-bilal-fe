@@ -1,8 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { ApiUrl } from '../app.variable';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
+    'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root',
@@ -81,7 +89,7 @@ export class AdminService {
   }
   deleteUser(userData: USER) {
     const url = `${ApiUrl.user}/${userData.id}`;
-    return this.http.delete(url);
+    return this.http.delete(url, httpOptions);
   }
   deleteCat(catData: Category) {
     const url = `${ApiUrl.category}/${catData.id}`;

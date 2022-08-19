@@ -1,5 +1,5 @@
 <header class="text-center" style="margin: 100px">
-  <h2>Latest</h2>
+  <h2 *ngIf="hasRoute('/')">Latest</h2>
   <div class="container">
     <div
       class="row d-flex flex-wrap align-items-center"
@@ -67,6 +67,7 @@
                         class="d-block w-100"
                         src="{{ getLink(ph) }}"
                         alt="First slide"
+                        id="main-img"
                       />
                     </div>
 
