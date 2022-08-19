@@ -72,8 +72,7 @@ export class PhotosComponent implements OnInit {
   }
 
   getCategoryName(id:any){
-    var res:any = this.categoryNames.filter(ele=> ele.id === id)
-    return res[0].name;
+    return this.categoryNames.filter(ele=> ele.id === id)[0].name;
   }
 
   getLink(link: any) {
