@@ -13,6 +13,7 @@ export class PhotosComponent implements OnInit {
   tableName = 'Artifact';
   imageUrl: string = '';
   modalOptions: NgbModalOptions;
+  count: any[] = [];
   constructor(
     private adminservice: AdminService,
     private modalService: NgbModal
@@ -23,11 +24,21 @@ export class PhotosComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
-    this.adminservice.getPhoto().subscribe((photos) => {
+  async ngOnInit(): Promise<void> {
+    this.adminservice.getPhoto().subscribe((photos:any) => {
       this.photos = photos;
       console.log('data  :', photos);
     });
+
+    var res = await this.adminservice.getCategories().toPromise();
+    if(res){
+      this.count = [{name:"All",id:0}];
+      res.forEach((ele:any)=>{
+        this.count.push(ele);
+      })
+      console.log("res : ",this.count);
+    }
+    console.log("res : ",res);
   }
   onDelete(ph: Photo) {
     Swal.fire({
