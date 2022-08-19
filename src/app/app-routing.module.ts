@@ -10,6 +10,7 @@ import { LatestComponent } from './home/latest/latest.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './home/category/category.component';
+import { DonationComponent } from './home/donation/donation.component';
 
 const routes: Routes = [
   { path: 'whats', component: ExiptionComponent },
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'visit',
     component: VisitComponent,
+  },
+  {
+    path: 'contact',
+    component: DonationComponent,
   },
 
   {

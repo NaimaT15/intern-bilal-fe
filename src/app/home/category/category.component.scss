@@ -46,9 +46,11 @@ h1 {
 	display: block;
 }
 .btn {
-	border: none;
+	border:black;
+	padding-left: 3%;
+	padding-right: 3%;
 	outline: none;
-	padding: 12px 16px;
+	padding:2%;
 	background-color: white;
 	cursor: pointer;
 	&:hover {
@@ -58,4 +60,23 @@ h1 {
 .btn.active {
 	background-color: #56A94f;
 	color: white;
+
+}
+#myBtnContainer{
+	text-align: center;
+	text-decoration-line: underline;
+	
+	
+	
+}
+h2{
+	padding-left: 40%;
+	font-weight: bold;
+	background-color: rgb(39, 38, 38);
+	color: whitesmoke;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin: 3%;
+	width: 100%;
+
 }

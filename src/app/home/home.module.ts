@@ -13,6 +13,7 @@ import { VisitComponent } from './visit/visit.component';
 import { ExiptionComponent } from './exiption/exiption.component';
 import { DescriptionComponent } from './description/description.component';
 import { CategoryComponent } from './category/category.component';
+import { DonationComponent } from './donation/donation.component';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CategoryComponent } from './category/category.component';
     ExiptionComponent,
     DescriptionComponent,
     CategoryComponent,
+    DonationComponent
   ],
   imports: [
     CommonModule,
