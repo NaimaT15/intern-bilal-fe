@@ -23,7 +23,7 @@ section {
 }
 body {
 	background-color: #f1f1f1;
-	padding: 20px;
+	// padding: 20px;
 	font-family: Arial;
 }
 .main {
@@ -79,6 +79,11 @@ h3{
    flex-direction: column;
    padding-left: 10%;
    padding-bottom: 5%;
+ }
+
+ .custom-font{
+    font: 400 50px Roboto, "Helvetica Neue", sans-serif !important;
+    
  }
 .home {
     background-color: #e9ebe9;
