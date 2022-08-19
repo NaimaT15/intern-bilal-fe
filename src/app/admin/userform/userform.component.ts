@@ -134,7 +134,7 @@ export class UserformComponent implements OnInit {
         templateOptions: {
           type: 'password',
           label: 'Enter New Password',
-          placeholder: 'Enter Users Password',
+          placeholder: 'Enter New Password',
           required: true,
         },
       },
