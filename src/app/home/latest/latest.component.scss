@@ -1,5 +1,6 @@
 body {
 	background-color: #f1f1f1;
+	color: #f1f1f1;
 }
 
 * {
@@ -34,27 +35,22 @@ h5 {
 }
 
 #main-img {
-	margin-bottom: 80px;
-	margin-right: 80px;
+	margin: 0px;
 }
-.modal-content {
-	width: 1500px;
-	margin-left: -300px;
+h1 {
+	color: #f1f1f1;
+}
+h3 {
+	color: #f1f1f1;
 }
 // .text-description {
 // 	margin-right: 100px;
 // 	margin-left: 100px;
 // 	float: right;
 // }
-// #lightbox .carousel-item {
-// 	// width: 100%;
-// 	max-width: 100%;
-// 	max-height: 100%
-// 	// 	max-width: 1000px;
-// 	// 	max-height: 500px;
-// 	// 	margin-bottom: 100px;
-// 	// 	margin-left: 100px;
-// }
+#lightbox .carousel-item {
+	background-color: rgba(37, 35, 36, 0.993);
+}
 // .my-class {
 // 	width: 8000%;
 // 	max-width: 80%;
