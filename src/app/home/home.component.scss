@@ -81,7 +81,18 @@ h3 {
  }
 
  .custom-font{
-    font: 400 50px Roboto, "Helvetica Neue", sans-serif !important;  
+    font: 400 50px 'Times New Roman', "Helvetica Neue", sans-serif !important;  
+}
+
+.welcome-font{
+    font-family: Garamond, serif;
+    font-size: 35px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    color: white;
+    float: left;
+    width: 80%;
+    // padding-right: 20px;
  }
 
  .home {
@@ -90,6 +101,6 @@ h3 {
     color: #56a94f f;
 }
 .body {
-    margin-right: 100px;
-    margin-left: 100px;
+    // margin-right: 100px;
+    // margin-left: 100px;
 }
