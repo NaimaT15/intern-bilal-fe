@@ -1,5 +1,6 @@
 body {
-	background-color: #232425;
+	background-color: #f1f1f1;
+	color: #f1f1f1;
 }
 
 * {
@@ -32,16 +33,25 @@ h5 {
 		}
 	}
 }
+
+#main-img {
+	margin: 0px;
+}
+h1 {
+	color: #f1f1f1;
+}
+h3 {
+	color: #f1f1f1;
+}
 // .text-description {
 // 	margin-right: 100px;
 // 	margin-left: 100px;
 // 	float: right;
 // }
-#lightbox {
-	width: 100vw;
-
-	// 	max-width: 1000px;
-	// 	max-height: 500px;
-	// 	margin-bottom: 100px;
-	// 	margin-left: 100px;
+#lightbox .carousel-item {
+	background-color: rgb(29, 28, 28);
 }
+// .my-class {
+// 	width: 8000%;
+// 	max-width: 80%;
+// }

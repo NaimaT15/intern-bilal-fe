@@ -14,6 +14,7 @@ export class PhotosComponent implements OnInit {
   imageUrl: string = '';
   modalOptions: NgbModalOptions;
   count: any[] = [];
+  categoryNames :any[]=[];
   constructor(
     private adminservice: AdminService,
     private modalService: NgbModal
@@ -25,6 +26,13 @@ export class PhotosComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+
+    var res = await this.adminservice.getCategories().toPromise();
+    if(res){
+      res.forEach(ele=>{
+        this.categoryNames.push(ele);
+      })
+    }
     this.adminservice.getPhoto().subscribe((photos:any) => {
       this.photos = photos;
       console.log('data  :', photos);
@@ -61,6 +69,10 @@ export class PhotosComponent implements OnInit {
         // this.cats = this.cats.filter((t) => t.id !== cat.id)
       }
     });
+  }
+
+  getCategoryName(id:any){
+    return this.categoryNames.filter(ele=> ele.id === id)[0].name;
   }
 
   getLink(link: any) {

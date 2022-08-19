@@ -11,7 +11,8 @@ nav {
     height: 100px;
     padding: 10px 90px;
     box-sizing: border-box;
-    background: rgba(45, 43, 43, 0.6);
+    // background: rgba(45, 43, 43, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     border-bottom: 1px solid #fff;
 }
 span {
@@ -42,4 +43,13 @@ nav ul li {
     .dropdown-menu {
         background-color: black;
     }
+}
+
+.button-end{
+    display: inline;
+    float: right;
+    border-radius: 20px;
+    padding: 5px;
+    // background-color: #27c71b;
+    margin-left: 60px;
 }

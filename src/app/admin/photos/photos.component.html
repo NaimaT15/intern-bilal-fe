@@ -27,87 +27,66 @@
                   type="button"
                   class="btn btn-outline-primary float-sm-right"
                   href="/admin/addph"
-                  style="width: fit-content;"
                 >
                   Add New Arifact
                 </a>
               </div>
-
-              <mat-tab-group mat-align-tabs="start">
-                <mat-tab
-                  class="today-background"
-                  *ngFor="let cn of count; let i = index"
-                  label="{{ cn.name }}"
-                >
-                  <div class="card-header">
-                    <h3 class="card-title"><span>{{cn.name}}</span> {{ tableName }} List</h3>
-                    <!-- /.card-header -->
-                  </div>
-                  <div class="card-body">
-                    <table
-                      id="example2"
-                      class="table table-bordered table-hover"
-                    >
-                      <thead>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Artifact Photo</th>
+                      <th>Artifact Name</th>
+                      <th>Artifact Description</th>
+                      <th>Artifact Category</th>
+                      <th>Artifact Code</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ph of photos">
+                      <td (click)="open(mymodal, ph)">
+                        <img src="{{ getLink(ph) }}" width="100" height="100" />
+                      </td>
+                      <td>{{ ph.name }}</td>
+                      <td>{{ ph.description | slice: 0:40 }}</td>
+                      <td>{{ getCategoryName(ph.category) }}</td>
+                      <td>{{ ph.code }}</td>
+                      <td>
+                        <!-- <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                          <i class="fas fa-folder"></i>
+                          View</a
+                        > -->
+                        <a
+                          class="btn btn-info btn-sm mr-3"
+                          [routerLink]="['/admin/addph']"
+                          [queryParams]="{ type: 'edit', id: ph.id }"
+                        >
+                          <i class="fas fa-pencil-alt"> </i>
+                          Edit
+                        </a>
+                        <a
+                          class="btn btn-danger btn-sm mr-3"
+                          (click)="onDelete(ph)"
+                        >
+                          <i class="fas fa-trash"> </i>
+                          Delete
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!-- <tfoot>
                         <tr>
-                          <th>Artifact Photo</th>
-                          <th>Artifact Name</th>
-                          <th>Artifact Description</th>
-                          <th>Artifact Category</th>
-                          <th>Artifact Code</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let ph of photos">
-                          <td (click)="open(mymodal, ph)">
-                            <img
-                              src="{{ getLink(ph) }}"
-                              width="100"
-                              height="100"
-                            />
-                          </td>
-                          <td>{{ ph.name }}</td>
-                          <td>{{ ph.description | slice: 0:40 }}</td>
-                          <td>{{ ph.category }}</td>
-                          <td>{{ ph.code }}</td>
-                          <td>
-                            <!-- <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
-                            <i class="fas fa-folder"></i>
-                            View</a
-                          > -->
-                            <a
-                              class="btn btn-info btn-sm mr-3"
-                              [routerLink]="['/admin/addph']"
-                              [queryParams]="{ type: 'edit', id: ph.id }"
-                            >
-                              <i class="fas fa-pencil-alt"> </i>
-                              Edit
-                            </a>
-                            <a
-                              class="btn btn-danger btn-sm mr-3"
-                              (click)="onDelete(ph)"
-                            >
-                              <i class="fas fa-trash"> </i>
-                              Delete
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                      <!-- <tfoot>
-                          <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                          </tr> 
-                        </tfoot>-->
-                    </table>
-                  </div>
-                </mat-tab>
-              </mat-tab-group>
-
+                          <th>Rendering engine</th>
+                          <th>Browser</th>
+                          <th>Platform(s)</th>
+                          <th>Engine version</th>
+                          <th>CSS grade</th>
+                        </tr> 
+                      </tfoot>-->
+                </table>
+              </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
