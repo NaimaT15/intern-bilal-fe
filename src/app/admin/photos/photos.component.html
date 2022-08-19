@@ -51,7 +51,7 @@
                       </td>
                       <td>{{ ph.name }}</td>
                       <td>{{ ph.description | slice: 0:40 }}</td>
-                      <td>{{ ph.category }}</td>
+                      <td>{{ getCategoryName(ph.category) }}</td>
                       <td>{{ ph.code }}</td>
                       <td>
                         <!-- <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
