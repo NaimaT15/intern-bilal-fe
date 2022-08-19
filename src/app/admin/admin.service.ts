@@ -54,6 +54,7 @@ export class AdminService {
     return this.http.get<Category[]>(ApiUrl.catogries);
   }
   getPhoto() {
+    console.log(this.http.get<USER[]>(ApiUrl.users));
     return this.http.get<Photo[]>(ApiUrl.Photos);
   }
   getSinglecat(id: any) {

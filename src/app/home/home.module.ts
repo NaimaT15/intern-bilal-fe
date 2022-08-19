@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AgmCoreModule } from '@agm/core';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -14,6 +15,7 @@ import { ExiptionComponent } from './exiption/exiption.component';
 import { DescriptionComponent } from './description/description.component';
 import { CategoryComponent } from './category/category.component';
 import { DonationComponent } from './donation/donation.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -28,15 +30,18 @@ import { DonationComponent } from './donation/donation.component';
     ExiptionComponent,
     DescriptionComponent,
     CategoryComponent,
-    DonationComponent
+    DonationComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    NgbModule,
+
     // AgmCoreModule.forRoot({
     //   apiKey: 'AI   zaSyCCseUfKPCqLWApllfFAP1XUdOvv3VcG7M',
     // }),
   ],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent, LatestComponent],
+  bootstrap: [LatestComponent],
 })
 export class HomeModule {}

@@ -103,7 +103,7 @@ export class UserformComponent implements OnInit {
     this.data = res[0];
     this.model = {
       name: this.data.full_name,
-      username: this.data.username,
+      username: this.data.user_name,
       email: this.data.email,
       role: this.data.role_id,
       id: this.data.id,
@@ -133,7 +133,7 @@ export class UserformComponent implements OnInit {
         type: 'input',
         templateOptions: {
           type: 'password',
-          label: 'Enter Password',
+          label: 'Enter New Password',
           placeholder: 'Enter Users Password',
           required: true,
         },
