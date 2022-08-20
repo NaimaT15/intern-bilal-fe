@@ -14,7 +14,7 @@ export class CategoriesfFormComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
-  formname: string = 'Add A Categorie';
+  formname: string = 'Category';
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;
@@ -98,7 +98,7 @@ export class CategoriesfFormComponent implements OnInit {
   }
 
   async onUpdate() {
-    console.log("iside : ",this.model);
+    console.log('iside : ', this.model);
     if (this.form.valid) {
       var res = await this.adminservice.updateCategory(this.model).toPromise();
       // routing and swal doest work here even thought the data is registered succesfully

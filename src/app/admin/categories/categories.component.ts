@@ -16,24 +16,28 @@ export class CategoriesComponent implements OnInit {
     this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
   }
   onDelete(cat: Category) {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.adminservice
-          .deleteCat(cat)
-          .subscribe(
-            () => (this.cats = this.cats.filter((t) => t.id !== cat.id))
-          );
-        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
-        this.cats = this.cats.filter((t) => t.id !== cat.id);
-      }
-    });
+    try {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          var res = await this.adminservice.deleteCat(cat).toPromise();
+          console.log('res : ', res);
+          // .subscribe(
+          //   () => (this.cats = this.cats.filter((t) => t.id !== cat.id))
+          // );
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          this.cats = this.cats.filter((t) => t.id !== cat.id);
+        }
+      });
+    } catch (er) {
+      Swal.fire('Oops!', 'Sorry there was an error.', 'error');
+    }
   }
 }

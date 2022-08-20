@@ -28,10 +28,6 @@ const routes: Routes = [
     path: 'visit',
     component: VisitComponent,
   },
-  {
-    path: 'contact',
-    component: DonationComponent,
-  },
   { path: 'price', component: PriceComponent },
 
   {
@@ -46,6 +42,10 @@ const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent,
+  },
+  {
+    path: 'contact',
+    component: DonationComponent,
   },
 ];
 

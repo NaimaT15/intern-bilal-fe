@@ -15,7 +15,7 @@ export class UserformComponent implements OnInit {
   model: any = {};
   fields: FormlyFieldConfig[] = [];
   options: FormlyFormOptions = {};
-  formname: string = 'Register User';
+  formname: string = 'User';
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;

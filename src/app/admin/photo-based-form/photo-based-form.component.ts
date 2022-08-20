@@ -14,7 +14,7 @@ export class PhotoBasedFormComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
-  formname: string = 'Add A Collection';
+  formname: string = 'Collection';
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;

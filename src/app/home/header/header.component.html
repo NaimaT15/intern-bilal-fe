@@ -5,11 +5,25 @@
       width="200"
       height="100" -->
       <img
-        class="brand-image "
-        style="opacity: 0.4; margin-left:20%;"
-        
+        class="brand-image"
+        src="../../assets/bh_english.jpg"
+        style="
+          opacity: 0.4;
+          margin-left: 20%;
+          width: 250px;
+          height: 90px;
+          margin-top: 50px;
+        "
       />
-      <span class="brand-text font-weight-light" style="font-family: Garamond, serif;font-size: 35px; margin-top: -24px;"> Bilalul-Habeshi </span>
+      <span
+        class="brand-text font-weight-light"
+        style="
+          font-family: Garamond, serif;
+          font-size: 35px;
+          margin-top: -24px;
+          color: #56a94f;
+        "
+      ></span>
     </a>
 
     <button
@@ -23,14 +37,14 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div style="margin-left: 20%;">
+    <div style="margin-left: 20%">
       <div
         class="collapse navbar-collapse order-3 text-center"
         id="navbarCollapse"
       >
         <!-- Left navbar links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" style="color: #56a94f">
             <a class="nav-link" [routerLink]="['/']">Home</a>
           </li>
 
@@ -115,7 +129,12 @@
             <a class="nav-link" [routerLink]="['/contact']">Join & Support </a>
           </li>
           <li class="nav-item">
-              <a class="" class="nav-link button-end btn btn-secondary" [routerLink]="['/login']">Admin</a>
+            <a
+              class=""
+              class="nav-link button-end btn btn-secondary"
+              [routerLink]="['/login']"
+              >Admin</a
+            >
           </li>
         </ul>
 
