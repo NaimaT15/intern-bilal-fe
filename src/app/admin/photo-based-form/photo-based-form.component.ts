@@ -19,6 +19,7 @@ export class PhotoBasedFormComponent implements OnInit {
   id: any = null;
   data: any = null;
   category:any ;
+  loading:boolean = false;
 
   constructor(
     private adminservice: AdminService,
@@ -34,14 +35,18 @@ export class PhotoBasedFormComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.activatedRoute.queryParams.subscribe((queryParams) => {
-      console.log('type', queryParams['type']);
-      console.log('id', queryParams['id']);
-      this.isTypeEdit = queryParams['type'];
-      this.id = queryParams['id'];
+    // this.activatedRoute.queryParams.subscribe((queryParams) => {
+    //   console.log('type', queryParams['type']);
+    //   console.log('id', queryParams['id']);
+    //   this.isTypeEdit = queryParams['type'];
+    //   this.id = queryParams['id'];
+    //   this.fetchDataForEdit();
+    // });
+    this.isTypeEdit = this.activatedRoute.snapshot.queryParamMap.get('type');
+    this.id = this.activatedRoute.snapshot.queryParamMap.get('id');
+    if(this.isTypeEdit !=null && this.isTypeEdit!=undefined){
       this.fetchDataForEdit();
-    });
-
+    }
     this.category = await this.adminservice.getCategories().toPromise();
 
     if (this.id == null) {
@@ -100,13 +105,17 @@ export class PhotoBasedFormComponent implements OnInit {
       .toPromise();
     console.log('res : ', res);
     this.data = res[0];
-    this.model = {
-      name: this.data.name,
-      code: this.data.code,
-      description: this.data.description,
-      category: this.data.category,
-      id: this.data.id,
-    };
+    if(this.data){
+      this.model = {
+        name: this.data.name,
+        code: this.data.code,
+        description: this.data.description,
+        category: this.data.category,
+        id: this.data.id,
+      };
+    }
+
+    console.log("category : ",this.category)
     this.fields = [
       {
         key: 'name',
@@ -159,6 +168,7 @@ export class PhotoBasedFormComponent implements OnInit {
   async onSubmit() {
     console.log(this.form.value);
     if (this.form.valid) {
+      this.loading = true;
       if (
         this.model.image.length != null &&
         this.model.image.length != undefined
@@ -174,7 +184,10 @@ export class PhotoBasedFormComponent implements OnInit {
       } else {
         console.log(res.body.message);
       }
+      this.loading = false;
     } else {
+      this.loading = false;
+
       console.log('In Vaild Form  Values');
     }
   }
@@ -182,6 +195,7 @@ export class PhotoBasedFormComponent implements OnInit {
   async onSubmitUpdate() {
     console.log(this.model);
     if (this.form.valid) {
+      this.loading = true;
       if (this.model.image) {
         if (
           this.model.image.length != null &&
@@ -189,17 +203,17 @@ export class PhotoBasedFormComponent implements OnInit {
         ) {
           this.model.image = this.model.image[0];
         }
-        // var res = await this.adminservice
-        //   .updatePhotoBasedWithImage(this.model)
-        //   .toPromise();
+        var res = await this.adminservice
+          .updatePhotoBasedWithImage(this.model)
+          .toPromise();
         // console.log('res : ', res);
-        // if (res) {
-        //   Swal.fire('Successfully created', 'Succesfully Submited', 'success');
-        //   this.router.navigate(['admin/photos']);
-        //   return console.log('sucess');
-        // } else {
-        //   console.log(res.body.message);
-        // }
+        if (res) {
+          Swal.fire('Successfully created', 'Succesfully Submited', 'success');
+          this.router.navigate(['admin/photos']);
+          return console.log('sucess');
+        } else {
+          // console.log(res.body.message);
+        }
       } else {
         console.log('with out image');
         var res = await this.adminservice
@@ -213,7 +227,10 @@ export class PhotoBasedFormComponent implements OnInit {
           console.log(res.body.message);
         }
       }
+      this.loading = false;
     } else {
+      this.loading = false;
+
       console.log('In Vaild Form  Values');
     }
   }

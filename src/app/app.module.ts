@@ -16,7 +16,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DonationComponent } from './home/donation/donation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],
   imports: [
@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     // FormlyModule.forRoot(),
     BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   exports: [],
   providers: [],

@@ -47,24 +47,31 @@
                         [options]="options"
                         [form]="form"
                       ></formly-form>
-
-                      <div
-                        class="card-footer"
-                        (click)="onSubmit()"
-                        *ngIf="id == null"
-                      >
-                        <button type="submit" class="btn btn-primary">
-                          Submit
-                        </button>
+                      <div *ngIf="!loading">
+                        <div
+                          class="card-footer"
+                          (click)="onSubmit()"
+                          *ngIf="id == null"
+                        >
+                          <button type="submit" class="btn btn-primary">
+                            Submit
+                          </button>
+                        </div>
+                        <div
+                          class="card-footer"
+                          (click)="onSubmitUpdate()"
+                          *ngIf="id"
+                        >
+                          <button type="submit" class="btn btn-primary">
+                            Update
+                          </button>
+                        </div>
                       </div>
-                      <div
-                        class="card-footer"
-                        (click)="onSubmitUpdate()"
-                        *ngIf="id"
-                      >
-                        <button type="submit" class="btn btn-primary">
-                          Update
-                        </button>
+
+                      <div *ngIf="loading">
+                        <div class="row justify-content-center text-center">
+                          <mat-spinner></mat-spinner>
+                        </div>
                       </div>
                     </form>
                   </div>

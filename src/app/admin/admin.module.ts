@@ -19,6 +19,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FormlyFieldFile } from './file-value/file-value.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     }),
     FormlyBootstrapModule,
     MatTabsModule,
+    MatProgressSpinnerModule
   ],
 })
 export class AdminModule {}

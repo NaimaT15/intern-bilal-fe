@@ -19,6 +19,7 @@ export class CategoriesfFormComponent implements OnInit {
   id: any = null;
   data: any = null;
   fields: FormlyFieldConfig[] = [];
+  loading: boolean = false;
   constructor(
     private adminservice: AdminService,
     private router: Router,
@@ -55,6 +56,7 @@ export class CategoriesfFormComponent implements OnInit {
       ];
     }
   }
+
   async fetchDataForEdit() {
     // var res =
     var res: any = await this.adminservice.getSinglecat(this.id).toPromise();
@@ -79,6 +81,7 @@ export class CategoriesfFormComponent implements OnInit {
 
   async onSubmit() {
     if (this.form.valid) {
+      this.loading = true;
       var res = await this.adminservice.addCategory(this.model).toPromise();
       // routing and swal doest work here even thought the data is registered succesfully
       if (res) {
@@ -91,7 +94,9 @@ export class CategoriesfFormComponent implements OnInit {
       } else {
         //error
       }
+      this.loading = false;
     } else {
+      this.loading = false;
       console.log('error');
       Swal.fire('Not saved', 'There was error saving your data', 'error');
     }
@@ -100,6 +105,7 @@ export class CategoriesfFormComponent implements OnInit {
   async onUpdate() {
     console.log('iside : ', this.model);
     if (this.form.valid) {
+      this.loading = true;
       var res = await this.adminservice.updateCategory(this.model).toPromise();
       // routing and swal doest work here even thought the data is registered succesfully
       if (res) {
@@ -112,7 +118,9 @@ export class CategoriesfFormComponent implements OnInit {
       } else {
         //error
       }
+      this.loading = false;
     } else {
+      this.loading = false;
       console.log('error');
       Swal.fire('Not saved', 'There was error saving your data', 'error');
     }
