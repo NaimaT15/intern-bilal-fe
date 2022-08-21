@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
   message: string = '';
+  loading:boolean = false;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -27,11 +28,17 @@ export class LoginComponent implements OnInit {
 
   async onSubmit() {
     try {
+      this.loading = true;
       var res = await this.loginService.login(this.login).toPromise();
 
-      if (res) {
+      console.log("res : ",res);
+      if (res.message == null || res.message ==undefined) {
         this.router.navigate(['admin']);
+      }else{
+        this.message = res.message;
+
       }
+      this.loading = false
     } catch (err: any) {
       console.log('err : ', err.error.message);
       if (err.error.message) {

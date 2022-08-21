@@ -27,13 +27,14 @@ export class CategoriesComponent implements OnInit {
         confirmButtonText: 'Yes, delete it!',
       }).then(async (result) => {
         if (result.isConfirmed) {
-          var res = await this.adminservice.deleteCat(cat).toPromise();
-          console.log('res : ', res);
-          // .subscribe(
-          //   () => (this.cats = this.cats.filter((t) => t.id !== cat.id))
-          // );
-          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
-          this.cats = this.cats.filter((t) => t.id !== cat.id);
+          try{
+            var res = await this.adminservice.deleteCat(cat).toPromise();
+            this.cats = this.cats.filter((t) => t.id !== cat.id);
+            Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          }catch(er){
+            this.cats = this.cats.filter((t) => t.id !== cat.id);
+            Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          }
         }
       });
     } catch (er) {
