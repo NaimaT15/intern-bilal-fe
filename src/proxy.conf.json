@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "hhttps://bilal-backend.skylinkict.com/api/",
+    "secure": false
+  }
+}

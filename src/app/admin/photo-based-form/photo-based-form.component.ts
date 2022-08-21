@@ -18,6 +18,7 @@ export class PhotoBasedFormComponent implements OnInit {
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;
+  category:any ;
 
   constructor(
     private adminservice: AdminService,
@@ -32,7 +33,7 @@ export class PhotoBasedFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.activatedRoute.queryParams.subscribe((queryParams) => {
       console.log('type', queryParams['type']);
       console.log('id', queryParams['id']);
@@ -40,6 +41,9 @@ export class PhotoBasedFormComponent implements OnInit {
       this.id = queryParams['id'];
       this.fetchDataForEdit();
     });
+
+    this.category = await this.adminservice.getCategories().toPromise();
+
     if (this.id == null) {
       this.fields = [
         {
@@ -75,7 +79,9 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Category',
             placeholder: 'choose Artifact Categoray',
-            options: this.adminservice.getCategories(),
+            options: this.category,
+            valueProp:'id',
+            labelProp:'name',
             required: true,
           },
         },
@@ -136,7 +142,7 @@ export class PhotoBasedFormComponent implements OnInit {
         templateOptions: {
           label: 'Category',
           placeholder: 'choose Artifact Categoray',
-          options: this.adminservice.getCategories(),
+          options: this.category,
           valueProp: 'id',
           labelProp: 'name',
           required: true,
