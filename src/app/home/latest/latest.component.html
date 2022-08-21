@@ -1,5 +1,5 @@
 <header class="text-center">
-  <h2 *ngIf="hasRoute('/')">Latest</h2>
+  <ng-container *ngIf="hasRoute('/')"> <h2>Latest</h2></ng-container>
   <div class="container">
     <div
       class="row d-flex flex-wrap align-items-center"
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="col">
-                      <div class="card-header">
+                      <div class="card-header" style="width: 600px">
                         <h1 style="border: 3px #f1f1f1 solid">
                           <strong style="color: #f1f1f1"> {{ ph.name }}</strong>
                         </h1>

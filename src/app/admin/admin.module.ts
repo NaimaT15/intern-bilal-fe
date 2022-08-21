@@ -58,7 +58,7 @@ import { MatTabsModule } from '@angular/material/tabs';
       ],
     }),
     FormlyBootstrapModule,
-    MatTabsModule
+    MatTabsModule,
   ],
 })
 export class AdminModule {}

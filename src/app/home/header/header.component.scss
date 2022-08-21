@@ -12,8 +12,9 @@ nav {
     padding: 10px 90px;
     box-sizing: border-box;
     // background: rgba(45, 43, 43, 0.6);
-    background: rgba(0, 0, 0, 0.6);
+    background: #f1f1f1;
     border-bottom: 1px solid #fff;
+    color: #56a94f;
 }
 span {
     padding: 22px 20px;
@@ -26,12 +27,13 @@ span {
 }
 
 nav ul li {
+    &:hover {
+        color: rgb(161, 117, 36);
+    }
     a {
         font-size: 15px;
-        color: whitesmoke;
-        &:hover {
-            color: #27c71b;
-        }
+        color: #56a94f;
+
         nav ul {
             list-style: none;
             float: right;
@@ -45,11 +47,14 @@ nav ul li {
     }
 }
 
-.button-end{
+.button-end {
     display: inline;
     float: right;
     border-radius: 20px;
     padding: 5px;
     // background-color: #27c71b;
     margin-left: 60px;
+}
+img {
+    size: 10px;
 }

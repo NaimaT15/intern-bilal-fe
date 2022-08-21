@@ -14,7 +14,7 @@ import { DonationComponent } from './home/donation/donation.component';
 import { PriceComponent } from './home/price/price.component';
 
 const routes: Routes = [
-  { path: 'whats', component: ExiptionComponent },
+  { path: 'whats', component: CategoryComponent },
   { path: 'collection', component: CategoryComponent },
 
   {
@@ -27,10 +27,6 @@ const routes: Routes = [
   {
     path: 'visit',
     component: VisitComponent,
-  },
-  {
-    path: 'contact',
-    component: DonationComponent,
   },
   { path: 'price', component: PriceComponent },
 
@@ -46,6 +42,10 @@ const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent,
+  },
+  {
+    path: 'contact',
+    component: DonationComponent,
   },
 ];
 

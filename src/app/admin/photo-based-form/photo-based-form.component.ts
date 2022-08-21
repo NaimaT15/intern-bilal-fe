@@ -14,7 +14,7 @@ export class PhotoBasedFormComponent implements OnInit {
   form = new FormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
-  formname: string = 'Add A Collection';
+  formname: string = 'Collection';
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;
@@ -79,9 +79,7 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Category',
             placeholder: 'choose Artifact Categoray',
-            options: this.category,
-            valueProp:'id',
-            labelProp:'name',
+            options: this.adminservice.getCategories(),
             required: true,
           },
         },
