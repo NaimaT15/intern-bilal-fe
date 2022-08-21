@@ -79,7 +79,9 @@ export class PhotoBasedFormComponent implements OnInit {
           templateOptions: {
             label: 'Category',
             placeholder: 'choose Artifact Categoray',
-            options: this.adminservice.getCategories(),
+            options: this.category,
+            valueProp:'id',
+            labelProp:'name',
             required: true,
           },
         },
