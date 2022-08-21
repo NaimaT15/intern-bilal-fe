@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 import { ApiUrl } from '../app.variable';
 const httpOptions = {
   headers: new HttpHeaders({
-    'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
-    'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'DELETE, POST, GET, PUT ',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json',
   }),
@@ -93,11 +93,11 @@ export class AdminService {
   }
   deleteCat(catData: Category) {
     const url = `${ApiUrl.category}/${catData.id}`;
-    return this.http.delete(url);
+    return this.http.delete(url, httpOptions);
   }
   deletephoto(phData: Photo) {
     const url = `${ApiUrl.addPb}/${phData.id}`;
-    return this.http.delete(url);
+    return this.http.delete(url, httpOptions);
   }
 }
 export interface USER {

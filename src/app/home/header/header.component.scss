@@ -4,15 +4,16 @@ body {
     font-family: Arial;
 }
 nav {
+    z-index: 999;
     position: fixed;
     top: 0;
-    left: 0;
+
     width: 100%;
     height: 100px;
     padding: 10px 90px;
     box-sizing: border-box;
     // background: rgba(45, 43, 43, 0.6);
-    background: #f1f1f1;
+    background: #f6f6f6;
     border-bottom: 1px solid #fff;
     color: #56a94f;
 }
