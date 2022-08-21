@@ -40,12 +40,12 @@ const routes: Routes = [
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
   {
-    path: '**',
-    component: NotFoundComponent,
-  },
-  {
     path: 'contact',
     component: DonationComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 
