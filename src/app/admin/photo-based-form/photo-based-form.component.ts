@@ -115,7 +115,9 @@ export class PhotoBasedFormComponent implements OnInit {
       };
     }
 
-    console.log("category : ",this.category)
+    if(this.category==null || this.category == undefined){
+      this.category = await this.adminservice.getCategories().toPromise();
+    }
     this.fields = [
       {
         key: 'name',
