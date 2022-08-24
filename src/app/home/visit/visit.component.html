@@ -1,16 +1,46 @@
 <app-header></app-header>
 <body>
-  <section>
-    <div class="overlay">
-      <h1 class="custom-font">
-        Visit the Bilalul-Habeshi Museum
-        <hr />
-        <div class="smaller">
-          Nejashi Mosque in Tigray region It is made in a new form.
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div
+        id="heroCarousel"
+        data-bs-interval="5000"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div
+            class="carousel-item active"
+            style="background-image: url(../../../assets/img/slide/slide-2.jpg)"
+          >
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Visit Us</h2>
+                <p class="animate__animated animate__fadeInUp">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Porro excepturi est, aut molestiae esse saepe commodi! Ex
+                  perferendis magni aspernatur dolorum modi, exercitationem
+                  expedita ipsa temporibus doloribus dicta repellendus harum?
+                </p>
+                <div>
+                  <a
+                    href="#about"
+                    class="btn-get-started animate__animated animate__fadeInUp scrollto"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </h1>
+      </div>
     </div>
   </section>
+  <!-- End Hero -->
 
   <div class="container bg-dark" style="color: white; margin-top: 120px">
     <div

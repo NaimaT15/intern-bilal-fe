@@ -18,19 +18,19 @@
           <div class="carousel-container">
             <div class="carousel-content">
               <h2 class="animate__animated animate__fadeInDown">
-                Grow Your Business
+                Explore Your Islamic History
               </h2>
               <p class="animate__animated animate__fadeInUp">
-                Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et
-                est quaerat sequi nihil ut aliquam. Occaecati alias dolorem
-                mollitia ut. Similique ea voluptatem. Esse doloremque accusamus
-                repellendus deleniti vel. Minus et tempore modi architecto.
+                Explore Historical Monuments, Including A Collection Of
+                Manuscripts, Architectural Works From Mosques And Historical
+                Tombs Of Muslims, And Images Of Religious Figures And Sheiks,
+                Leaders, Elders And The Kings Of The Tribes
               </p>
               <div>
                 <a
-                  href="#about"
+                  [routerLink]="['/visit']"
                   class="btn-get-started animate__animated animate__fadeInUp scrollto"
-                  >Read More</a
+                  >Visit Us</a
                 >
               </div>
             </div>
@@ -55,9 +55,9 @@
               </p>
               <div>
                 <a
-                  href="#about"
+                  [routerLink]="['/contact']"
                   class="btn-get-started animate__animated animate__fadeInUp scrollto"
-                  >Read More</a
+                  >Look For More</a
                 >
               </div>
             </div>
@@ -122,10 +122,12 @@
 <div class="container bg-dark" style="color: white; margin-top: 120px">
   <div class="row">
     <div class="col-sm-6 col-lg-8">
-      <div class="row justify-content-start text-start">
+      <div
+        class="row justify-content-start text-start animate__animated animate__fadeInDown"
+      >
         <img src="../../assets/bh_english.jpg" width="80%" height="200px" />
       </div>
-      <div class="welcome-font">
+      <div class="welcome-font animate__animated animate__fadeInUp">
         Welcome to the family of art, design and performance museums, where
         everyone is invited to enjoy the power of creativity.
       </div>
