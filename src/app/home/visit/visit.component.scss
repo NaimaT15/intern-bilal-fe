@@ -110,7 +110,10 @@ h1 {
 }
 
 .custom-font {
-  font: 400 40px Roboto, "Helvetica Neue", sans-serif !important;
+  font: 400 50px Roboto, "Helvetica Neue", sans-serif !important;
   font-weight: 600;
   margin-left: 50px;
+}
+.smaller {
+  font-size: 35px;
 }

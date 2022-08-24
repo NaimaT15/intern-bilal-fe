@@ -2,14 +2,14 @@ h2 {
     margin-left: 10%;
     margin-top: 5%;
 }
-section {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background: url("./../../assets/home.jpg") no-repeat center center;
-    background-size: cover;
-    background-size: center;
-}
+// section {
+//     position: relative;
+//     width: 100vw;
+//     height: 100vh;
+//     background: url("./../../assets/home.jpg") no-repeat center center;
+//     background-size: cover;
+//     background-size: center;
+// }
 /* Center website */
 /* Add padding BETWEEN each column */
 /* Create three equal columns that floats next to each other */
@@ -17,12 +17,11 @@ section {
 /* Content */
 /* The "show" class is added to the filtered elements */
 /* Style the buttons */
-* {
-    box-sizing: border-box;
-}
+// * {
+//     box-sizing: border-box;
+// }
 body {
     background-color: #f1f1f1;
-    // padding: 20px;
     font-family: Arial;
 }
 .main {
@@ -93,10 +92,10 @@ h3 {
     // padding-right: 20px;
 }
 
- .custom-font{
+.custom-font {
     font: 400 40px Roboto, "Helvetica Neue", sans-serif !important;
     font-weight: 600;
- }
+}
 
 .home {
     background-color: #f1f1f1;
