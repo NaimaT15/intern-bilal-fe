@@ -1,5 +1,5 @@
 <body class="hold-transition sidebar-mini layout-fixed">
-  <aside class="main-sidebar sidebar-light-indngo elevation-4">
+  <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link"
       ><img
@@ -48,7 +48,11 @@
           <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a routerLink="/admin" class="nav-link">
+            <a
+              routerLink="/admin"
+              class="nav-link"
+              [ngClass]="{ active: hasRoute('/admin') }"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -89,7 +93,11 @@
           </ul> -->
           </li>
           <li class="nav-item">
-            <a href="/admin/categories" class="nav-link">
+            <a
+              href="/admin/categories"
+              class="nav-link"
+              [ngClass]="{ active: hasRoute('/admin/categories') }"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -109,7 +117,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/photos" class="nav-link">
+            <a
+              href="/admin/photos"
+              class="nav-link"
+              [ngClass]="{ active: hasRoute('/admin/photos') }"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -129,7 +141,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/users" class="nav-link">
+            <a
+              href="/admin/users"
+              class="nav-link"
+              [ngClass]="{ active: hasRoute('/admin/users') }"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
