@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
   hasRoute(route: string) {
+    console.log(this.router.url);
     return this.router.url === route;
   }
 }
