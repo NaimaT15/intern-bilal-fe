@@ -18,8 +18,8 @@ export class PhotoBasedFormComponent implements OnInit {
   isTypeEdit: any = null;
   id: any = null;
   data: any = null;
-  category:any ;
-  loading:boolean = false;
+  category: any;
+  loading: boolean = false;
 
   constructor(
     private adminservice: AdminService,
@@ -44,7 +44,7 @@ export class PhotoBasedFormComponent implements OnInit {
     // });
     this.isTypeEdit = this.activatedRoute.snapshot.queryParamMap.get('type');
     this.id = this.activatedRoute.snapshot.queryParamMap.get('id');
-    if(this.isTypeEdit !=null && this.isTypeEdit!=undefined){
+    if (this.isTypeEdit != null && this.isTypeEdit != undefined) {
       this.fetchDataForEdit();
     }
     this.category = await this.adminservice.getCategories().toPromise();
@@ -85,8 +85,8 @@ export class PhotoBasedFormComponent implements OnInit {
             label: 'Category',
             placeholder: 'choose Artifact Categoray',
             options: this.category,
-            valueProp:'id',
-            labelProp:'name',
+            valueProp: 'id',
+            labelProp: 'name',
             required: true,
           },
         },
@@ -105,7 +105,7 @@ export class PhotoBasedFormComponent implements OnInit {
       .toPromise();
     console.log('res : ', res);
     this.data = res[0];
-    if(this.data){
+    if (this.data) {
       this.model = {
         name: this.data.name,
         code: this.data.code,
@@ -115,7 +115,7 @@ export class PhotoBasedFormComponent implements OnInit {
       };
     }
 
-    if(this.category==null || this.category == undefined){
+    if (this.category == null || this.category == undefined) {
       this.category = await this.adminservice.getCategories().toPromise();
     }
     this.fields = [

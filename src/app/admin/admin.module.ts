@@ -19,7 +19,9 @@ import { PhotosComponent } from './photos/photos.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { FormlyFieldFile } from './file-value/file-value.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ViderFormComponent } from './video-form/video-form.component';
+import { VideosComponent } from './videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     PhotosComponent,
     CategoriesComponent,
     FormlyFieldFile,
+    ViderFormComponent,
+    VideosComponent,
   ],
   imports: [
     CommonModule,
@@ -60,7 +64,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     }),
     FormlyBootstrapModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
 })
 export class AdminModule {}
