@@ -15,6 +15,8 @@ import { DescriptionComponent } from './description/description.component';
 import { CategoryComponent } from './category/category.component';
 import { DonationComponent } from './donation/donation.component';
 import { PriceComponent } from './price/price.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -31,10 +33,12 @@ import { PriceComponent } from './price/price.component';
     CategoryComponent,
     DonationComponent,
     PriceComponent,
+    MyDialogComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MatDialogModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AI   zaSyCCseUfKPCqLWApllfFAP1XUdOvv3VcG7M',
     // }),

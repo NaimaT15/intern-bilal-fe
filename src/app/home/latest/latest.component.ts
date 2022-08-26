@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { AdminService, Category, Photo } from 'src/app/admin/admin.service';
+import { MyDialogComponent } from '../my-dialog/my-dialog.component';
 
 @Component({
   selector: 'app-latest',
@@ -13,15 +15,27 @@ export class LatestComponent implements OnInit {
   photos: Photo[] = [];
   categoryNames: any[] = [];
   cats: Category[] = [];
-  imageUrl: string = '';
-  description: string = '';
+
+  // closeDialog() {
+  //    this.dialogRef.close();
+  //  }
+  data = {
+    imageUrl: '',
+    description: '',
+    category: '',
+    name: '',
+  };
+  // imageUrl: string = '';
+  // description: string = '';
   modalOptions: NgbModalOptions;
   count: any[] = [];
-  category: any;
+  // public dialogRef: MatDialogRef<MyDialogComponent>
+  // category: any;
   constructor(
     private adminservice: AdminService,
     private modalService: NgbModal,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) {
     this.modalOptions = {
       fullscreen: true,
@@ -29,7 +43,6 @@ export class LatestComponent implements OnInit {
       centered: true,
       animation: true,
       size: 'xl',
-
       scrollable: true,
       // backdropClass: 'customBackdrop',
     };
@@ -48,16 +61,39 @@ export class LatestComponent implements OnInit {
       console.log('data  :', photos);
     });
   }
+
+  openCompDialog(data: any) {
+    var passData = {
+      data: this.photos,
+      selected: data,
+    };
+    const myCompDialog = this.dialog.open(MyDialogComponent, {
+      panelClass: 'fullscreen-dialog',
+      data: passData,
+    });
+    myCompDialog.afterClosed().subscribe((res) => {
+      // Data back from dialog
+      console.log({ res });
+    });
+  }
+
   getLink(link: any) {
-    // console.log("link : ",link.photo_url);
     return link.photo_url;
   }
 
-  open(content: any, data: any) {
-    this.imageUrl = data.photo_url;
-    this.description = data.description;
-    this.category = data.category;
+  getLinkOf(ph: Photo) {
+    return ph.photo;
+  }
 
+  close() {
+    this.modalService.dismissAll();
+  }
+  open(content: any, data: any) {
+    this.data.category = data.category;
+    this.data.imageUrl = data.imageUrl;
+    this.data.description = data.description;
+    this.data.name = data.name;
+    console.log('data : ', data);
     // this.modalService.open(content, this.modalOptions).result.then();
     this.modalService.open(content, this.modalOptions);
   }
