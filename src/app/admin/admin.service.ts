@@ -89,15 +89,36 @@ export class AdminService {
   }
   deleteUser(userData: USER) {
     const url = `${ApiUrl.user}/${userData.id}`;
-    return this.http.delete(url, httpOptions);
+    return this.http.delete(url);
   }
   deleteCat(catData: Category) {
     const url = `${ApiUrl.category}/${catData.id}`;
-    return this.http.delete(url, httpOptions);
+    return this.http.delete(url);
   }
   deletephoto(phData: Photo) {
     const url = `${ApiUrl.addPb}/${phData.id}`;
-    return this.http.delete(url, httpOptions);
+    return this.http.delete(url);
+  }
+  addVideo(vData: any): Observable<any> {
+    var formData = new FormData();
+    for (const key in vData) {
+      formData.append(`${key}`, `${vData[key]}`);
+    }
+    if (vData.video) {
+      formData.append('video', vData.video);
+    }
+    return this.http.post(ApiUrl.video, formData);
+  }
+  videos() {
+    return this.http.get(ApiUrl.video);
+  }
+  getSingleVideo(vdata: Video) {
+    const url = `${ApiUrl.addPb}/${vdata.id}`;
+    return this.http.get(url);
+  }
+  deleteVideo(vdata: Video) {
+    const url = `${ApiUrl.addPb}/${vdata.id}`;
+    return this.http.delete(url);
   }
 }
 export interface USER {
@@ -119,4 +140,10 @@ export interface Photo {
   category: string;
   photo: File;
   code: string;
+}
+export interface Video {
+  id?: number;
+  name: string;
+  description: string;
+  photo: File;
 }

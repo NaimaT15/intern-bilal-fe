@@ -8,6 +8,8 @@ import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.com
 import { PhotosComponent } from './photos/photos.component';
 import { UserformComponent } from './userform/userform.component';
 import { UsersComponent } from './users/users.component';
+import { ViderFormComponent } from './video-form/video-form.component';
+import { VideosComponent } from './videos/videos.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
       {
         path: 'add-cat',
         component: CategoriesfFormComponent,
+      },
+      {
+        path: 'addvid',
+        component: ViderFormComponent,
+      },
+      {
+        path: 'videos',
+        component: VideosComponent,
       },
     ],
   },

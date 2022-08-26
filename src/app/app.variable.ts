@@ -11,4 +11,5 @@ export class ApiUrl {
   public static photoBased = ApiUrl.baseUrl + 'pb';
   public static catogries = ApiUrl.baseUrl + 'category';
   public static Photos = ApiUrl.baseUrl + 'pb';
+  public static video = ApiUrl.baseUrl + 'vb';
 }
