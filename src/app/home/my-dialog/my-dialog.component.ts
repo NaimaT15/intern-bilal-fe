@@ -12,8 +12,10 @@ export class MyDialogComponent {
   selected: any;
   index: number = 0;
   constructor(
-    public dialogRef: MatDialogRef<MyDialogComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
+    // public dialogRef: MatDialogRef<MyDialogComponent>,
+    @Optional() public dialogRef: MatDialogRef<MyDialogComponent>, 
+    // @Inject(MAT_DIALOG_DATA) public dialogData: any
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
   ) {
     this.allData = data;
     // console.log("allData : ",this.allData)

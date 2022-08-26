@@ -4,10 +4,6 @@ import { CollectionsComponent } from './collections/collections.component';
 import { HomeComponent } from './home.component';
 import { VirtualTourComponent } from './virtual-tour/virtual-tour.component';
 
-import { VisitComponent } from './visit/visit.component';
-
-import { ExiptionComponent } from './exiption/exiption.component';
-import { LatestComponent } from './latest/latest.component';
 
 const routes: Routes = [
   {

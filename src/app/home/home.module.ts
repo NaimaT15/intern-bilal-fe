@@ -33,7 +33,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     CategoryComponent,
     DonationComponent,
     PriceComponent,
-    MyDialogComponent,
+    // MyDialogComponent,
   ],
   imports: [
     CommonModule,
