@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { AdminService, Video } from '../admin.service';
 @Component({
@@ -8,8 +9,18 @@ import { AdminService, Video } from '../admin.service';
 })
 export class VideosComponent implements OnInit {
   vids: Video[] = [];
+  videoUrl: string = '';
   tableName = 'Video';
-  constructor(private adminservice: AdminService) {}
+  modalOptions: NgbModalOptions;
+  constructor(
+    private adminservice: AdminService,
+    private modalService: NgbModal
+  ) {
+    this.modalOptions = {
+      backdrop: false,
+      // backdropClass: 'customBackdrop',
+    };
+  }
 
   ngOnInit(): void {
     this.adminservice.videos().subscribe((vid: any) => (this.vids = vid));
@@ -39,5 +50,12 @@ export class VideosComponent implements OnInit {
     } catch (er) {
       Swal.fire('Oops!', 'Sorry there was an error.', 'error');
     }
+  }
+  getLink(link: any) {
+    return link.photo_url;
+  }
+  open(content: any, data: any) {
+    this.videoUrl = data.photo_url;
+    this.modalService.open(content, this.modalOptions).result.then();
   }
 }
