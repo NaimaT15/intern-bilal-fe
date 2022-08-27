@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './home/category/category.component';
 import { DonationComponent } from './home/donation/donation.component';
 import { PriceComponent } from './home/price/price.component';
+import { VideoComponent } from './home/video/video.component';
 
 const routes: Routes = [
   { path: 'whats', component: CategoryComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  { path: 'video', component: VideoComponent },
 
   { path: 'view', component: DescriptionComponent },
 

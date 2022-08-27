@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 // import { AgmCoreModule } from '@agm/core';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -17,6 +18,7 @@ import { DonationComponent } from './donation/donation.component';
 import { PriceComponent } from './price/price.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { VideoComponent } from './video/video.component';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -33,12 +35,14 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     CategoryComponent,
     DonationComponent,
     PriceComponent,
+    VideoComponent,
     // MyDialogComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
     // AgmCoreModule.forRoot({
     //   apiKey: 'AI   zaSyCCseUfKPCqLWApllfFAP1XUdOvv3VcG7M',
     // }),
