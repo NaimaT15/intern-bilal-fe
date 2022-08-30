@@ -13,8 +13,6 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
-import { FormlyModule } from '@ngx-formly/core';
-import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],
@@ -29,14 +27,6 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    FormsModule,
-    FormlyModule.forRoot({
-      validationMessages: [
-        { name: 'required', message: 'This field is required' },
-      ],
-    }),
-    FormlyBootstrapModule,
-
   ],
   exports: [],
   providers: [],
