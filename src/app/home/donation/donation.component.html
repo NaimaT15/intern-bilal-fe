@@ -71,20 +71,26 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form action="">
-      <div class="mb-3">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="full Name" />
+    <div class="form-group">
+      <form [formGroup]="form">
+        <formly-form
+          [model]="model"
+          [fields]="fields"
+          [options]="options"
+          [form]="form"
+        ></formly-form>
+        <div class="card-footer" *ngIf="!loading">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+            Submit
+          </button>
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="full Name" />
+        <div *ngIf="loading">
+          <div class="row justify-content-center text-center">
+            <mat-spinner></mat-spinner>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
   <div class="modal-footer">
     <button

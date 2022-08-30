@@ -18,6 +18,7 @@ import Swal from 'sweetalert2';
 export class DonationComponent implements OnInit {
   closeResult = '';
   name = '';
+  loading: boolean = false;
   modalOptions: NgbModalOptions;
   form = new FormGroup({});
   model: any = {};
@@ -32,10 +33,71 @@ export class DonationComponent implements OnInit {
         required: true,
       },
     },
+    {
+      key: 'phone_one',
+      type: 'input',
+      templateOptions: {
+        label: 'Phone Number',
+        placeholder: 'Enter Your Phone Number',
+        required: true,
+      },
+    },
+    {
+      key: 'phone_two',
+      type: 'input',
+      templateOptions: {
+        label: 'Phone number 2',
+        placeholder: 'Enter Your phone number',
+        required: true,
+      },
+    },
+    {
+      key: 'phone_two',
+      type: 'input',
+      templateOptions: {
+        label: 'Phone number 2',
+        placeholder: 'Enter Your phone number',
+        required: false,
+      },
+    },
+    {
+      key: 'email',
+      type: 'input',
+      templateOptions: {
+        label: 'Email',
+        placeholder: 'Enter Your Email',
+        required: false,
+      },
+    },
+    {
+      key: 'description',
+      type: 'textarea',
+      templateOptions: {
+        label: 'Description',
+        placeholder: ' Describe your item',
+        required: true,
+      },
+    },
+    {
+      key: 'location',
+      type: 'input',
+      templateOptions: {
+        label: 'Location',
+        placeholder: ' where is the item located',
+        required: false,
+      },
+    },
+    {
+      key: 'remark',
+      type: 'input',
+      templateOptions: {
+        label: 'remark',
+        placeholder: 'Enter your remark',
+        required: false,
+      },
+    },
   ];
-  onChange(data: string, name: string) {
-    this.name = data;
-  }
+
   constructor(
     private modalService: NgbModal,
     private adminservice: AdminService,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 // import { AgmCoreModule } from '@agm/core';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -21,6 +22,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { VideoComponent } from './video/video.component';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { PlanVisitComponent } from './plan-visit/plan-visit.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -38,6 +42,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     DonationComponent,
     PriceComponent,
     VideoComponent,
+    PlanVisitComponent,
     // MyDialogComponent,
   ],
   imports: [
@@ -52,6 +57,8 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     }),
     FormlyBootstrapModule,
     ReactiveFormsModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

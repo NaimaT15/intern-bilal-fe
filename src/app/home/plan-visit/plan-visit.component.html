@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <!-- left column -->
+    <div class="col-md-6" style="width: 90%">
+      <!-- general form elements -->
+
+      <div class="form-group">
+        <form [formGroup]="form">
+          <formly-form
+            [model]="model"
+            [fields]="fields"
+            [options]="options"
+            [form]="form"
+          ></formly-form>
+          <div class="card-footer" *ngIf="!loading">
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+              Submit
+            </button>
+          </div>
+          <div *ngIf="loading">
+            <div class="row justify-content-center text-center">
+              <mat-spinner></mat-spinner>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

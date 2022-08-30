@@ -13,6 +13,7 @@ import { CategoryComponent } from './home/category/category.component';
 import { DonationComponent } from './home/donation/donation.component';
 import { PriceComponent } from './home/price/price.component';
 import { VideoComponent } from './home/video/video.component';
+import { PlanVisitComponent } from './home/plan-visit/plan-visit.component';
 
 const routes: Routes = [
   { path: 'whats', component: CategoryComponent },
@@ -25,7 +26,10 @@ const routes: Routes = [
   { path: 'video', component: VideoComponent },
 
   { path: 'view', component: DescriptionComponent },
-
+  {
+    path: 'plan-visit',
+    component: PlanVisitComponent,
+  },
   {
     path: 'visit',
     component: VisitComponent,
