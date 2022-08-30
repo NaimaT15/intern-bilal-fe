@@ -37,7 +37,7 @@ export class PlanVisitComponent implements OnInit {
       type: 'input',
       templateOptions: {
         type: 'number',
-        label: 'Date',
+        label: '',
         placeholder: 'Enter Guest Number',
         required: true,
       },
