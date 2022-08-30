@@ -36,6 +36,7 @@ import { VideoComponent } from './video/video.component';
     DonationComponent,
     PriceComponent,
     VideoComponent,
+    MyDialogComponent
     // MyDialogComponent,
   ],
   imports: [

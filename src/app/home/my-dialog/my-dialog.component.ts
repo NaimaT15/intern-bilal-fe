@@ -13,14 +13,16 @@ export class MyDialogComponent {
   index: number = 0;
   constructor(
     // public dialogRef: MatDialogRef<MyDialogComponent>,
-    @Optional() public dialogRef: MatDialogRef<MyDialogComponent>, 
+    @Optional() public dialogRef: MatDialogRef<MyDialogComponent>,
     // @Inject(MAT_DIALOG_DATA) public dialogData: any
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.allData = data;
     // console.log("allData : ",this.allData)
     this.photos = data.data;
     this.selected = data.selected;
+    console.log('photos : ', this.photos);
+    console.log('selected : ', this.selected);
     this.index = this.photos.findIndex((object) => {
       return object.id === this.selected.id;
     });
@@ -36,13 +38,15 @@ export class MyDialogComponent {
   }
   nextClicked() {
     const length = this.photos.length;
-    if (this.index > length - 1) {
-      this.index = this.index + 1;
-    } else {
+
+    if (this.index == length - 1) {
       this.index = 0;
+    } else {
+      this.index = this.index + 1;
     }
-    console.log("index ; ",this.index);
+    this.changeSelected();
   }
+
   prevClicked() {
     const length = this.photos.length;
     if (this.index == 0) {
@@ -50,6 +54,10 @@ export class MyDialogComponent {
     } else {
       this.index = this.index - 1;
     }
-    console.log("index : ",this.index);
+    this.changeSelected();
+  }
+
+  changeSelected() {
+    this.selected = this.photos[this.index];
   }
 }
