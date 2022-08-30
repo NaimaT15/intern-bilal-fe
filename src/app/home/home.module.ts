@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
 // import { AgmCoreModule } from '@agm/core';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -19,6 +20,7 @@ import { PriceComponent } from './price/price.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import { VideoComponent } from './video/video.component';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -43,9 +45,13 @@ import { VideoComponent } from './video/video.component';
     HomeRoutingModule,
     MatDialogModule,
     FormsModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AI   zaSyCCseUfKPCqLWApllfFAP1XUdOvv3VcG7M',
-    // }),
+    FormlyModule.forRoot({
+      validationMessages: [
+        { name: 'required', message: 'This field is required' },
+      ],
+    }),
+    FormlyBootstrapModule,
+    ReactiveFormsModule,
   ],
   exports: [HeaderComponent, FooterComponent],
 })

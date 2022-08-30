@@ -7,13 +7,18 @@ import { AdminService, Photo } from 'src/app/admin/admin.service';
   styleUrls: ['./collections.component.scss'],
 })
 export class CollectionsComponent implements OnInit {
-  search: boolean = true;
+  search: boolean = false;
   photos: Photo[] = [];
   filterdPhotos: Photo[] = [];
   searchText: string = '';
   constructor(private adminservice: AdminService) {}
   onChange(data: string) {
     this.searchText = data;
+    if (this.searchText.length > 0) {
+      this.search = true;
+    } else {
+      this.search = false;
+    }
   }
 
   ngOnInit() {
@@ -37,13 +42,12 @@ export class CollectionsComponent implements OnInit {
     return link.photo_url;
   }
   searchResult() {
-    this.search = !this.search;
     console.log(this.photos);
     var result: any[] = this.photos.filter(
       (item) =>
         item.name.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
     );
-    this.search = !this.search;
+
     console.log(result);
   }
 }

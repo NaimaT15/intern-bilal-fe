@@ -46,8 +46,9 @@
       The Bilalul Habeshi Museum is a charity organization and would like your
       contribution of by donating the Islamic collections that you may have so
       that we can display more collections for the visitors. If you would like
-      to discuss making a gift to the us, please
-      <a href="mailto:info@bilalulhabeshi.com" blank>email Us</a>
+      to discuss making a gift to the us, please fill this form
+      <a (click)="open(content)"> Here</a>
+      <!-- <a href="mailto:info@bilalulhabeshi.com" blank>email Us</a> -->
     </p>
   </div>
 
@@ -59,3 +60,39 @@
 </div>
 
 <app-footer></app-footer>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form action="">
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="full Name" />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="full Name" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
