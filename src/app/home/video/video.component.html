@@ -1,11 +1,11 @@
 <app-header></app-header>
 
-<section class="dark">
-  <div class="container py-4">
-    <h1 class="h1 text-center" id="pageHeaderTitle">Videos</h1>
+<section class="light">
+  <div class="container py-2">
+    <h1 class="h1 text-center text-dark" id="pageHeaderTitle">Videos</h1>
 
     <article
-      class="postcard dark"
+      class="postcard light"
       *ngFor="let v of videos; index as i"
       [ngClass]="{
         yellow: i % 4 == 0,
@@ -21,7 +21,7 @@
           alt="Image Title"
         />
       </a>
-      <div class="postcard__text">
+      <div class="postcard__text t-dark">
         <h1 class="postcard__title">
           <a href="#">{{ v.name | uppercase }} {{ i }}</a>
         </h1>
@@ -37,7 +37,15 @@
         <ul class="postcard__tagbox">
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-          <li class="tag__item play blue">
+          <li
+            class="tag__item play"
+            [ngClass]="{
+              yellow: i % 4 == 0,
+              blue: i % 4 == 1,
+              green: i % 4 == 2,
+              red: i % 4 == 3
+            }"
+          >
             <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
           </li>
         </ul>
