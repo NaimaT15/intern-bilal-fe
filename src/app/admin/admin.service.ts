@@ -109,7 +109,7 @@ export class AdminService {
     return this.http.post(ApiUrl.video, formData);
   }
   videos() {
-    return this.http.get(ApiUrl.video);
+    return this.http.get<Video>(ApiUrl.video);
   }
   getSingleVideo(vdata: Video) {
     const url = `${ApiUrl.addPb}/${vdata.id}`;

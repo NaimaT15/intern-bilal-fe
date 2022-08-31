@@ -22,6 +22,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ViderFormComponent } from './video-form/video-form.component';
 import { VideosComponent } from './videos/videos.component';
+import { DonationComponent } from './donation/donation.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { VideosComponent } from './videos/videos.component';
     FormlyFieldFile,
     ViderFormComponent,
     VideosComponent,
+    DonationComponent,
   ],
   imports: [
     CommonModule,
