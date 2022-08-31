@@ -136,6 +136,9 @@ export class AdminService {
   addDonater(dData: any) {
     return this.http.post<any>(ApiUrl.donater, dData);
   }
+  donations() {
+    return this.http.get<any>(ApiUrl.donater);
+  }
 }
 export interface USER {
   id?: number;

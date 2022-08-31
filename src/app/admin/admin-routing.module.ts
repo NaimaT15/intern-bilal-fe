@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesfFormComponent } from './categoriesf-form/categoriesf-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DonationComponent } from './donation/donation.component';
 import { PhotoBasedFormComponent } from './photo-based-form/photo-based-form.component';
 import { PhotosComponent } from './photos/photos.component';
 import { UserformComponent } from './userform/userform.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'categories',
         component: CategoriesComponent,
+      },
+      {
+        path: 'donation',
+        component: DonationComponent,
       },
       {
         path: 'photos',

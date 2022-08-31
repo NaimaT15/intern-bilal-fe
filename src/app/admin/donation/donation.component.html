@@ -1,1 +1,92 @@
-<p>donation works!</p>
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{{ tableName }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+              <li class="breadcrumb-item active">{{ tableName }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{ tableName }} List</h3>
+                <!-- <div class="row justify-content-end text-end"> -->
+                <a
+                  type="button"
+                  class="btn btn-outline-primary float-sm-right"
+                  href="/admin/addph"
+                >
+                  Add New Arifact
+                </a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Donater Name</th>
+                      <th>Donater Phone Number</th>
+                      <th>Donater Phone 2</th>
+                      <th>Donater Email</th>
+                      <th>Item Description</th>
+                      <th>Item location</th>
+                      <th>Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let d of donations">
+                      <td></td>
+                      <td>{{ d.name }}</td>
+                      <td>{{ d.p_phone_number }}</td>
+                      <td>{{ d.s_phone_number }}</td>
+                      <td>{{ d.email }}</td>
+                      <td>{{ d.description }}</td>
+                      <td>{{ d.location }}</td>
+                      <td>{{ d.remark }}</td>
+                      <td>
+                        <!-- <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                            <i class="fas fa-folder"></i>
+                            View</a
+                          > -->
+
+                        <a class="btn btn-danger btn-sm mr-3">
+                          <i class="fas fa-trash"> </i>
+                          Delete
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!-- <tfoot>
+                          <tr>
+                            <th>Rendering engine</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                            <th>CSS grade</th>
+                          </tr> 
+                        </tfoot>-->
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>

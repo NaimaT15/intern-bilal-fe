@@ -15,4 +15,5 @@ export class ApiUrl {
   public static visitor = ApiUrl.baseUrl + 'visitor';
   public static visitors = ApiUrl.baseUrl + 'visitors';
   public static donater = ApiUrl.baseUrl + 'donater';
+  public static donaters = ApiUrl.baseUrl + 'donaters';
 }

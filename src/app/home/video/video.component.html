@@ -9,9 +9,9 @@
       *ngFor="let v of videos; index as i"
       [ngClass]="{
         yellow: i % 4 == 0,
-        blue: i % 2 == 0,
-        green: i % 2 == 1,
-        red: i % 2 == 0
+        blue: i % 4 == 1,
+        green: i % 4 == 2,
+        red: i % 4 == 3
       }"
     >
       <a class="postcard__img_link" href="#">
