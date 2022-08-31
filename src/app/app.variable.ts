@@ -12,4 +12,7 @@ export class ApiUrl {
   public static catogries = ApiUrl.baseUrl + 'category';
   public static Photos = ApiUrl.baseUrl + 'pb';
   public static video = ApiUrl.baseUrl + 'vb';
+  public static visitor = ApiUrl.baseUrl + 'visitor';
+  public static visitors = ApiUrl.baseUrl + 'visitors';
+  public static donater = ApiUrl.baseUrl + 'donater';
 }

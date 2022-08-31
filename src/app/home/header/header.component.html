@@ -1,159 +1,3 @@
-<!-- <body class="layout-top-nav">
-  <div class="col-lg-1">
-    <nav class="navbar navbar-expand-md navbar-light navbar-white">
-      <a href="/" class="navbar-brand"> -->
-<!-- src="../../../assets/bh_english.jpg"
-      width="200"
-      height="100" -->
-<!-- <img
-          class="brand-image"
-          src="../../assets/bh_english.jpg"
-          style="
-            opacity: 0.4;
-            margin-left: 20%;
-            width: 250px;
-            height: 90px;
-            margin-top: 50px;
-          "
-        />
-        <span
-          class="brand-text font-weight-light"
-          style="
-            font-family: Garamond, serif;
-            font-size: 35px;
-            margin-top: -24px;
-            color: #56a94f;
-          "
-        ></span>
-      </a> -->
-
-<!-- <button
-        class="navbar-toggler order-1"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div style="margin-left: 20%">
-        <div
-          class="collapse navbar-collapse order-3 text-center"
-          id="navbarCollapse"
-        > -->
-<!-- Left navbar links -->
-<!-- <ul class="navbar-nav">
-            <li class="nav-item" style="color: #56a94f">
-              <a class="nav-link" [routerLink]="['/']">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/visit']">Visit us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link" [routerLink]="['/collection']">Collection</a> -->
-<!-- <a
-              id="dropdownSubMenu1"
-              [routerLink]="['/collection']"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class="nav-link dropdown-toggle"
-              >Collection</a
-            > -->
-<!-- <ul
-              aria-labelledby="dropdownSubMenu1"
-              class="dropdown-menu border-0 shadow"
-            > -->
-<!-- <li>
-                <a [routerLink]="['/collection']" class="dropdown-item"
-                  >Books
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['#']" class="dropdown-item">Alibasat</a>
-              </li> -->
-
-<!--<li class="dropdown-divider"></li>-->
-<!-- 
-              <li class="dropdown-submenu dropdown-hover">
-                <a
-                  id="dropdownSubMenu2"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  class="dropdown-item"
-                  >People</a
-                > -->
-<!--<ul
-                    aria-labelledby="dropdownSubMenu2"
-                    class="dropdown-menu border-0 shadow"
-                  >
-                    <li>
-                      <a tabindex="-1" href="#" class="dropdown-item">level 2</a>
-                    </li>
-  
-                  
-                    <li class="dropdown-submenu">
-                      <a
-                        id="dropdownSubMenu3"
-                        href="#"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        class="dropdown-item dropdown-toggle"
-                        >level 2</a
-                      >
-                      <ul
-                        aria-labelledby="dropdownSubMenu3"
-                        class="dropdown-menu border-0 shadow"
-                      >
-                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                        <li><a href="#" class="dropdown-item">3rd level</a></li>
-                      </ul>
-                    </li>
-                  
-  
-                    <li><a href="#" class="dropdown-item">level 2</a></li>
-                    <li><a href="#" class="dropdown-item">level 2</a></li>
-                  </ul>
-                </li>-->
-<!-- End Level two -->
-<!-- </li> -->
-<!-- </ul> -->
-<!-- </li> -->
-<!-- </li>
-
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/contact']"
-                >Join & Support
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class=""
-                class="nav-link button-end btn btn-secondary"
-                [routerLink]="['/login']"
-                >Admin</a
-              >
-            </li>
-          </ul> -->
-
-<!-- SEARCH FORM -->
-<!-- </div>
-      </div> -->
-
-<!-- Right navbar links -->
-<!-- </div> -->
-<!-- </nav>
-  </div>
-</body> -->
-
 <header id="header" class="fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
     <!-- <h1 class="logo"><a [routerLink]="['/']">Groovin</a></h1>
@@ -170,7 +14,7 @@
         <li>
           <a
             class="nav-link scrollto"
-            [ngClass]="{ active: hasRoute('/') }"
+            [ngClass]="{ active: hasRoute('/') || hasRoute('/plan-visit') }"
             [routerLink]="['/']"
             >Home</a
           >
@@ -183,31 +27,18 @@
             >Visit Us</a
           >
         </li>
-        <li>
-          <a
-            class="nav-link scrollto"
-            [ngClass]="{ active: hasRoute('/collection') }"
-            [routerLink]="['/collection']"
-            >Collection</a
-          >
-        </li>
-        <li>
-          <a
-            class="nav-link scrollto"
-            [ngClass]="{ active: hasRoute('/contact') }"
-            [routerLink]="['/contact']"
-            >Join & Support</a
-          >
-        </li>
 
-        <!--         
         <li class="dropdown">
-          <a href="#"
-            ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
+          <a
+            [routerLink]="['/collection']"
+            [ngClass]="{
+              active: hasRoute('/collection') || hasRoute('/video')
+            }"
+            ><span>collection</span> <i class="bi bi-chevron-down"></i
           ></a>
           <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li class="dropdown">
+            <li><a [routerLink]="['/video']">video</a></li>
+            <!-- <li class="dropdown">
               <a href="#"
                 ><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i
               ></a>
@@ -218,13 +49,27 @@
                 <li><a href="#">Deep Drop Down 4</a></li>
                 <li><a href="#">Deep Drop Down 5</a></li>
               </ul>
-            </li>
-            <li><a href="#">Drop Down 2</a></li>
+            </li> -->
+            <!-- <li><a href="#">Drop Down 2</a></li>
             <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
+            <li><a href="#">Drop Down 4</a></li> -->
           </ul>
-        </li> -->
-        <li><a class="getstarted scrollto" href="https://virtualtour.skylinkict.com/virtrualtour/">Virtual Tour</a></li>
+        </li>
+        <li>
+          <a
+            class="nav-link scrollto"
+            [ngClass]="{ active: hasRoute('/contact') || hasRoute('/donate') }"
+            [routerLink]="['/contact']"
+            >Join & Support</a
+          >
+        </li>
+        <li>
+          <a
+            class="getstarted scrollto"
+            href="https://virtualtour.skylinkict.com/virtrualtour/"
+            >Virtual Tour</a
+          >
+        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

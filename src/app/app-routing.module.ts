@@ -34,7 +34,7 @@ const routes: Routes = [
     path: 'visit',
     component: VisitComponent,
   },
-  { path: 'price', component: PriceComponent },
+  { path: 'donate', component: PriceComponent },
 
   {
     path: 'login',

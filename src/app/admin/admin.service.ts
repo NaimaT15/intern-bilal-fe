@@ -119,6 +119,23 @@ export class AdminService {
     const url = `${ApiUrl.addPb}/${vdata.id}`;
     return this.http.delete(url);
   }
+  addVisitor(vData: any) {
+    return this.http.post<any>(ApiUrl.visitor, vData);
+  }
+  visitors() {
+    return this.http.get(ApiUrl.visitors);
+  }
+  getSingleVisitor(vdata: any) {
+    const url = `${ApiUrl.visitor}/${vdata.id}`;
+    return this.http.get(url);
+  }
+  deleteVisitor(vdata: any) {
+    const url = `${ApiUrl.visitor}/${vdata.id}`;
+    return this.http.delete(url);
+  }
+  addDonater(dData: any) {
+    return this.http.post<any>(ApiUrl.donater, dData);
+  }
 }
 export interface USER {
   id?: number;
