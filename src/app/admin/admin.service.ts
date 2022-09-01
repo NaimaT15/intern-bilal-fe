@@ -137,7 +137,7 @@ export class AdminService {
     return this.http.post<any>(ApiUrl.donater, dData);
   }
   donations() {
-    return this.http.get<any>(ApiUrl.donater);
+    return this.http.get<any>(ApiUrl.donaters);
   }
 }
 export interface USER {

@@ -30,30 +30,28 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>Donater Name</th>
-                      <th>Donater Phone Number</th>
-                      <th>Donater Phone 2</th>
-                      <th>Donater Email</th>
-                      <th>Item Description</th>
-                      <th>Item location</th>
+                      <th>Name</th>
+                      <th>Phone Number</th>
+                      <th>No of visitors</th>
+                      <th>Date</th>
+                      <th>Time</th>
                       <th>Remarks</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let d of donations">
-                      <td>{{ d.name }}</td>
-                      <td>{{ d.primaryPhoneNumber }}</td>
-                      <td>{{ d.secondaryPhoneNumber }}</td>
-                      <td>{{ d.email }}</td>
-                      <td>{{ d.description }}</td>
-                      <td>{{ d.location }}</td>
-                      <td>{{ d.remark }}</td>
+                    <tr *ngFor="let v of visitors">
+                      <td>{{ v.name }}</td>
+                      <td>{{ v.PhoneNumber }}</td>
+                      <td>{{ v.noOfVisitor }}</td>
+                      <td>{{ v.visitDate }}</td>
+                      <td>{{ v.visitTime }}</td>
+                      <td>{{ v.remark }}</td>
                       <td>
                         <!-- <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
-                            <i class="fas fa-folder"></i>
-                            View</a
-                          > -->
+                              <i class="fas fa-folder"></i>
+                              View</a
+                            > -->
 
                         <a class="btn btn-danger btn-sm mr-3">
                           <i class="fas fa-trash"> </i>
@@ -63,14 +61,14 @@
                     </tr>
                   </tbody>
                   <!-- <tfoot>
-                          <tr>
-                            <th>Rendering engine</th>
-                            <th>Browser</th>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
-                            <th>CSS grade</th>
-                          </tr> 
-                        </tfoot>-->
+                            <tr>
+                              <th>Rendering engine</th>
+                              <th>Browser</th>
+                              <th>Platform(s)</th>
+                              <th>Engine version</th>
+                              <th>CSS grade</th>
+                            </tr> 
+                          </tfoot>-->
                 </table>
               </div>
               <!-- /.card-body -->

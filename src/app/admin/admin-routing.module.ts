@@ -11,6 +11,7 @@ import { UserformComponent } from './userform/userform.component';
 import { UsersComponent } from './users/users.component';
 import { ViderFormComponent } from './video-form/video-form.component';
 import { VideosComponent } from './videos/videos.component';
+import { VisitorsComponent } from './visitors/visitors.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
         path: 'photos',
         component: PhotosComponent,
       },
+      {
+        path: 'visitors',
+        component: VisitorsComponent,
+      },
+
       {
         path: 'adduser',
         component: UserformComponent,

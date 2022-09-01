@@ -23,6 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ViderFormComponent } from './video-form/video-form.component';
 import { VideosComponent } from './videos/videos.component';
 import { DonationComponent } from './donation/donation.component';
+import { VisitorsComponent } from './visitors/visitors.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DonationComponent } from './donation/donation.component';
     ViderFormComponent,
     VideosComponent,
     DonationComponent,
+    VisitorsComponent,
   ],
   imports: [
     CommonModule,
