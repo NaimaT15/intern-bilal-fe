@@ -32,7 +32,6 @@
                     <tr>
                       <th>Donater Name</th>
                       <th>Donater Phone Number</th>
-                      <th>Donater Phone 2</th>
                       <th>Donater Email</th>
                       <th>Item Description</th>
                       <th>Item location</th>
@@ -44,19 +43,18 @@
                     <tr *ngFor="let d of donations">
                       <td>{{ d.name }}</td>
                       <td>{{ d.primaryPhoneNumber }}</td>
-                      <td>{{ d.secondaryPhoneNumber }}</td>
                       <td>{{ d.email }}</td>
                       <td>{{ d.description }}</td>
                       <td>{{ d.location }}</td>
                       <td>{{ d.remark }}</td>
                       <td>
-                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
-                          <i class="fas fa-folder"></i>
-                          View</a
-                        >
                         <a class="btn btn-success btn-sm mr-3" [routerLink]="">
                           <i class="fa fa-check" aria-hidden="true"></i>
                           Approve</a
+                        >
+                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                          <i class="fas fa-folder"></i>
+                          View</a
                         >
 
                         <a class="btn btn-danger btn-sm mr-3">
