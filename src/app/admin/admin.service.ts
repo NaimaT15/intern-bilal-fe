@@ -116,7 +116,7 @@ export class AdminService {
     return this.http.get(url);
   }
   deleteVideo(vdata: Video) {
-    const url = `${ApiUrl.addPb}/${vdata.id}`;
+    const url = `${ApiUrl.video}/${vdata.id}`;
     return this.http.delete(url);
   }
   addVisitor(vData: any) {
@@ -138,6 +138,10 @@ export class AdminService {
   }
   donations() {
     return this.http.get<any>(ApiUrl.donaters);
+  }
+  deleteDonater(vData: any) {
+    const url = `${ApiUrl.donater}/${vData.id}`;
+    return this.http.delete(url);
   }
 }
 export interface USER {

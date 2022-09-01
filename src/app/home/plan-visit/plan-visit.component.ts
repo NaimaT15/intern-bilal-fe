@@ -80,7 +80,7 @@ export class PlanVisitComponent implements OnInit {
 
   async onSubmit() {
     if (this.form.valid) {
-      const res = await this.adminservice.addDonater(this.model).toPromise();
+      const res = await this.adminservice.addVisitor(this.model).toPromise();
       if ((res.statuscode = 200)) {
         this.router.navigate(['/']);
         Swal.fire('Successfully created', 'Plan saved Sucessfully', 'success');
