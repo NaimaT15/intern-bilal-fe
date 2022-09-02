@@ -48,6 +48,6 @@ export class CollectionsComponent implements OnInit {
         item.name.toLowerCase().indexOf(this.searchText.toLowerCase()) > -1
     );
 
-    console.log(result);
+    return result;
   }
 }
