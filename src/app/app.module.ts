@@ -15,10 +15,13 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormlyModule } from '@ngx-formly/core';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, NotFoundComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -37,6 +40,7 @@ import { FormlyModule } from '@ngx-formly/core';
     }),
     FormlyBootstrapModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports: [],
   providers: [],

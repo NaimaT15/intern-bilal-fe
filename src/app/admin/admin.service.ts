@@ -148,6 +148,10 @@ export class AdminService {
     const url = `${ApiUrl.donater}/${id}`;
     return this.http.get(url);
   }
+
+  getListWithPaginator(npp:number,page:number){
+    return this.http.get(`${ApiUrl.collection_list}?npp=${npp}&page=${page}`)
+  }
 }
 export interface USER {
   id?: number;

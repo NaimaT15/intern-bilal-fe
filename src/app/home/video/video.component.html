@@ -15,6 +15,7 @@
       }"
     >
       <a class="postcard__img_link" href="#">
+        <!-- <source src="https://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' /> -->
         <img
           class="postcard__img"
           src="https://picsum.photos/1000/1000"
@@ -46,7 +47,9 @@
               red: i % 4 == 3
             }"
           >
-            <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+            <a (click)="open(mymodal,v)"
+              ><i class="fas fa-play mr-2"></i>Play Episode</a
+            >
           </li>
         </ul>
       </div>
@@ -55,3 +58,22 @@
 </section>
 
 <app-footer></app-footer>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-body bg-dark">
+    <video
+      id="my_video_1"
+      class="video-js vjs-default-skin"
+      width="760px"
+      height="387px"
+      controls
+      preload="none"
+      poster="http://video-js.zencoder.com/oceans-clip.jpg"
+      data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'
+    >
+      <source src="{{videoLink}}" type="video/mp4" />
+      <!-- <source src="https://vjs.zencdn.net/v/oceans.webm" type="video/webm" /> -->
+    </video>
+
+  </div>
+</ng-template>

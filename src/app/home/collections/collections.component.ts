@@ -11,6 +11,10 @@ export class CollectionsComponent implements OnInit {
   photos: Photo[] = [];
   filterdPhotos: Photo[] = [];
   searchText: string = '';
+  pageSize:number = 10;
+  page:number = 1;
+  totalItems:number = 100;
+
   constructor(private adminservice: AdminService) {}
   onChange(data: string) {
     this.searchText = data;
@@ -22,10 +26,16 @@ export class CollectionsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.adminservice.getPhoto().subscribe((photos: any) => {
-      this.photos = photos;
-      console.log('data  :', photos);
-    });
+    
+    
+    // this.adminservice.getListWithPaginator(this.pageSize,this.page).subscribe((data:any)=>{
+    //   // console.log("data new : ",data);
+    //   this.photos = data.results;
+    // })
+    // this.adminservice.getPhoto().subscribe((photos: any) => {
+    //   this.photos = photos;
+    //   console.log('data  :', photos);
+    // });
 
     // this.photos.filter(
     //   (item) =>

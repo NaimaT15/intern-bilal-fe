@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AdminService, Category, Photo } from 'src/app/admin/admin.service';
 
 @Component({
@@ -7,14 +7,15 @@ import { AdminService, Category, Photo } from 'src/app/admin/admin.service';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
+  // @Input() from = "";
   cats: Category[] = [];
   photos: Photo[] = [];
   filertedPhotots: any[] = [];
   constructor(private adminservice: AdminService) {}
 
   ngOnInit(): void {
-    this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
-    this.adminservice.getPhoto().subscribe((photo) => (this.photos = photo));
+    // this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
+    // this.adminservice.getPhoto().subscribe((photo) => (this.photos = photo));
   }
   getAll() {
     return this.photos;

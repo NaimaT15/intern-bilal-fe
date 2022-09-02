@@ -15,7 +15,9 @@ export class LatestComponent implements OnInit {
   photos: Photo[] = [];
   categoryNames: any[] = [];
   cats: Category[] = [];
-
+  pageSize:number = 10;
+  page:number = 1;
+  totalItems:number = 10;
   // closeDialog() {
   //    this.dialogRef.close();
   //  }
@@ -48,20 +50,44 @@ export class LatestComponent implements OnInit {
     };
   }
 
-  async ngOnInit(): Promise<any> {
-    var res = await this.adminservice.getCategories().toPromise();
-    if (res) {
-      res.forEach((ele) => {
-        this.categoryNames.push(ele);
-      });
-    }
-    this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
-    this.adminservice.getPhoto().subscribe((photos: any) => {
-      this.photos = photos;
-      console.log('data  :', photos);
-    });
+  handlePageChange(event:any) {
+    console.log("handle page change : ",event)
+    this.page = event;
+    this.fetchWithPageNumber();
   }
 
+  fetchWithPageNumber(){
+    this.adminservice.getListWithPaginator(this.pageSize,this.page).subscribe((data:any)=>{
+      this.photos = data.results;
+      console.log("data : ",data)
+      this.totalItems = data.pagination.totalItem;
+    })
+  }
+
+  async ngOnInit(): Promise<any> {
+    // var res = await this.adminservice.getCategories().toPromise();
+    // if (res) {
+    //   res.forEach((ele) => {
+    //     this.categoryNames.push(ele);
+    //   });
+    // }
+    this.adminservice.getCategories().subscribe((cat) => (this.cats = cat));
+    this.fetchWithPageNumber();
+    // this.adminservice.getPhoto().subscribe((photos: any) => {
+    //   this.photos = photos;
+    //   this.totalItems = this.photos.length;
+    //   console.log('data  :', photos);
+    // });
+    for (let i = 1; i <= 100; i++) {
+      this.collection.push(`item ${i}`);
+    }
+
+  }
+
+  collection:any[] = [];
+  p=1;  
+  // constructor() {
+  // }
   openCompDialog(data: any) {
     var passData = {
       data: this.photos,
@@ -104,4 +130,5 @@ export class LatestComponent implements OnInit {
     var res: any = this.categoryNames.filter((ele) => ele.id === id);
     return res[0].name;
   }
+  
 }
