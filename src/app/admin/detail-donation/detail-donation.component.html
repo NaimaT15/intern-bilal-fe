@@ -1,0 +1,149 @@
+<ng-template [ngIf]="type" [ngIfElse]="elseBlock">
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="container-fluid">
+          <div id="example1" class="card">
+            <div class="card-header bg-primary">
+              <h3 class="card-title">Visitor Name: {{ item.name }}</h3>
+              <h3 class="card-title">Donater Name: {{ item.name }}</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Guests No
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        {{ item.noOfVisitor }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Visit Date
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        {{ item.visitDate }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Visitor Phone Number
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        <span class="text-success">{{ item.PhoneNumber }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <dl class="row">
+                <dt class="col-sm-4">Visitor Name</dt>
+                <dd class="col-sm-8">
+                  {{ item.name }}
+                </dd>
+                <dt class="col-sm-4">Visit Time.</dt>
+                <dd class="col-sm-8">
+                  {{ item.visitTime }}
+                </dd>
+                <dt class="col-sm-4">Remarks</dt>
+                <dd class="col-sm-8">
+                  {{ item.remark }}
+                </dd>
+
+                <!-- <dt class="col-sm-4">Slip No</dt>
+          <dd class="col-sm-8">
+            {{ object.slip_no }}
+          </dd> -->
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</ng-template>
+<ng-template #elseBlock>
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="container-fluid">
+          <div id="example1" class="card">
+            <div class="card-header bg-primary">
+              <h3 class="card-title">Donater Name: {{ item.name }}</h3>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Donater Phone number 1
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        {{ item.primaryPhoneNumber }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Donater Phone number 2
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        {{ item.secondaryPhoneNumber }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">
+                        Donater Email
+                      </span>
+                      <span class="info-box-number text-center text-muted">
+                        <span class="text-success">{{ item.email }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <dl class="row">
+                <dt class="col-sm-4">Item Description</dt>
+                <dd class="col-sm-8">
+                  {{ item.description }}
+                </dd>
+                <dt class="col-sm-4">Item Location</dt>
+                <dd class="col-sm-8">
+                  {{ item.location }}
+                </dd>
+                <dt class="col-sm-4">Remarks</dt>
+                <dd class="col-sm-8">
+                  {{ item.remark }}
+                </dd>
+
+                <!-- <dt class="col-sm-4">Slip No</dt>
+            <dd class="col-sm-8">
+              {{ object.slip_no }}
+            </dd> -->
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body></ng-template
+>

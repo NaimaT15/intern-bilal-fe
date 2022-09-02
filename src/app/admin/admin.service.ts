@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { ApiUrl } from '../app.variable';
+import { Time } from '@angular/common';
 const httpOptions = {
   headers: new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
@@ -112,7 +113,7 @@ export class AdminService {
     return this.http.get<Video>(ApiUrl.video);
   }
   getSingleVideo(vdata: Video) {
-    const url = `${ApiUrl.addPb}/${vdata.id}`;
+    const url = `${ApiUrl.video}/${vdata.id}`;
     return this.http.get(url);
   }
   deleteVideo(vdata: Video) {
@@ -125,9 +126,9 @@ export class AdminService {
   visitors() {
     return this.http.get(ApiUrl.visitors);
   }
-  getSingleVisitor(vdata: any) {
-    const url = `${ApiUrl.visitor}/${vdata.id}`;
-    return this.http.get(url);
+  getSingleVisitor(id: any): Observable<any> {
+    const url = `${ApiUrl.visitor}/${id}`;
+    return this.http.get<any>(url);
   }
   deleteVisitor(vdata: any) {
     const url = `${ApiUrl.visitor}/${vdata.id}`;
@@ -142,6 +143,10 @@ export class AdminService {
   deleteDonater(vData: any) {
     const url = `${ApiUrl.donater}/${vData.id}`;
     return this.http.delete(url);
+  }
+  getSingleDonater(id: any): Observable<any> {
+    const url = `${ApiUrl.donater}/${id}`;
+    return this.http.get(url);
   }
 }
 export interface USER {
@@ -169,4 +174,12 @@ export interface Video {
   name: string;
   description: string;
   photo: File;
+}
+export interface Visitor {
+  name: string;
+  PhoneNumber: number;
+  noOfVisitor: number;
+  visitDate: Date;
+  visitTime: Time;
+  remark: Text;
 }

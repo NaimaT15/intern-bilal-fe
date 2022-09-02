@@ -24,6 +24,7 @@ import { ViderFormComponent } from './video-form/video-form.component';
 import { VideosComponent } from './videos/videos.component';
 import { DonationComponent } from './donation/donation.component';
 import { VisitorsComponent } from './visitors/visitors.component';
+import { DetailDonationComponent } from './detail-donation/detail-donation.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { VisitorsComponent } from './visitors/visitors.component';
     VideosComponent,
     DonationComponent,
     VisitorsComponent,
+    DetailDonationComponent,
   ],
   imports: [
     CommonModule,

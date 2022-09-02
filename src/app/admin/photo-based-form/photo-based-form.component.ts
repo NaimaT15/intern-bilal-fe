@@ -35,15 +35,9 @@ export class PhotoBasedFormComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    // this.activatedRoute.queryParams.subscribe((queryParams) => {
-    //   console.log('type', queryParams['type']);
-    //   console.log('id', queryParams['id']);
-    //   this.isTypeEdit = queryParams['type'];
-    //   this.id = queryParams['id'];
-    //   this.fetchDataForEdit();
-    // });
     this.isTypeEdit = this.activatedRoute.snapshot.queryParamMap.get('type');
     this.id = this.activatedRoute.snapshot.queryParamMap.get('id');
+    console.log(this.isTypeEdit);
     if (this.isTypeEdit != null && this.isTypeEdit != undefined) {
       this.fetchDataForEdit();
     }

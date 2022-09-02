@@ -52,7 +52,11 @@
                           <i class="fa fa-check" aria-hidden="true"></i>
                           Approve</a
                         >
-                        <a class="btn btn-primary btn-sm mr-3" [routerLink]="">
+                        <a
+                          class="btn btn-primary btn-sm mr-3"
+                          [routerLink]="['/admin/detail']"
+                          [queryParams]="{ type: 'visitor', id: v.id }"
+                        >
                           <i class="fas fa-folder"></i>
                           View</a
                         >
