@@ -25,6 +25,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { PlanVisitComponent } from './plan-visit/plan-visit.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
+import { NgxPaginationModule } from 'ngx-pagination';
 // import { GoogleMapsModule } from "angular/google-maps";
 
 @NgModule({
@@ -43,7 +44,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     PriceComponent,
     VideoComponent,
     PlanVisitComponent,
-    // MyDialogComponent,
+    MyDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +60,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ReactiveFormsModule,
     MatTabsModule,
     MatProgressSpinnerModule,
+    NgxPaginationModule
   ],
   exports: [HeaderComponent, FooterComponent],
 })
