@@ -1,7 +1,7 @@
 
 FROM node:14 AS builder
 
-# Set the working directory in the container
+
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the container
